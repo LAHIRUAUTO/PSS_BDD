@@ -21,12 +21,13 @@
             <class name="PSSTestRunner.PSSTestRunner">
                 <methods>
                     <include name="LogInToThePSSAdmin"/>
+                    <include name="ClickOnToogleMenu"/>
                     <include name="LogOutFromThePSSAdmin"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="Sub_Suite_2">
+    <!--<test verbose="2" preserve-order="true" name="Sub_Suite_2">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">
@@ -47,5 +48,5 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 </suite>

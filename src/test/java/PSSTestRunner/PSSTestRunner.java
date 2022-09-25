@@ -51,6 +51,14 @@ public class PSSTestRunner extends Utils {
 
     }
 
+    @Test (priority = 1, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log in test case")
+    public void ClickOnToogleMenu (){
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        newadminhomepage.clickToogleMenu();
+
+
+    }
+
     @Test (dependsOnMethods = {"LogInToThePSSAdmin"}, priority = 2, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log out test case")
     public void LogOutFromThePSSAdmin (){
 

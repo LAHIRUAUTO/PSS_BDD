@@ -25,6 +25,14 @@ public class AdminHomePageObjects extends Utils {
     @CacheLookup
     WebElement logoutbutton;
 
+    @FindBy(xpath = "/html/body/header/a\n")
+    @CacheLookup
+    WebElement tooglemenu;
+
+    @FindBy (xpath = "/html/body/header/nav/ul/li[2]/a\n")
+    @CacheLookup
+    WebElement maintenancetab;
+
     public AdminHomePageObjects() throws IOException {
     }
 }

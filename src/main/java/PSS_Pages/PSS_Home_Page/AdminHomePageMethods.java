@@ -13,6 +13,11 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         //System.out.println(userinfo.getText());
     }
 
+    public void clickToogleMenu () {
+        explicitWaitElementClickable("/html/body/header/a\n");
+        click(tooglemenu);
+    }
+
     public void clickLogoutButton () {
         logoutbutton.click();
     }

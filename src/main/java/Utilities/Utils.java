@@ -78,6 +78,12 @@ public class Utils extends Browser_Base{
         action.moveToElement(element).perform();
     }
 
+    //Click
+    public void click(WebElement element) {
+        Actions action = new Actions(driver);
+        action.click(element).perform();
+    }
+
 
     //Capture Screen Shots start
         @Parameters({ "browser"})
