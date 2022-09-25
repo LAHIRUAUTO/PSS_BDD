@@ -1,0 +1,221 @@
+
+
+
+2022 09 25 15:03/: Test suite started 
+
+
+
+
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
+log4j:WARN Please initialize the log4j system properly.
+Starting ChromeDriver 105.0.5195.19 (b9c217c128c16f53d12f9a02933fcfdec1bf49af-refs/branch-heads/5195@{#176}) on port 35858
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Sep 25, 2022 3:03:58 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Sep 25, 2022 3:03:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 105, so returning the closest version found: 104
+Sep 25, 2022 3:03:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 105 of 104
+
+
+Correct URL hit on chrome
+
+
+
+LogInToThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+LogInToThePSSAdmin Test Case Execution Succeed at: 2022 09 25 15:04/
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogInToThePSSAdmin On chrome
+Test Passed Screenshot taken LogInToThePSSAdmin On chrome
+
+
+
+LogOutFromThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+LogOutFromThePSSAdmin Test Case Execution Succeed at: 2022 09 25 15:04/
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogOutFromThePSSAdmin On chrome
+Test Passed Screenshot taken LogOutFromThePSSAdmin On chrome
+
+
+
+
+
+
+
+
+1664098445556	geckodriver	INFO	Listening on 127.0.0.1:41512
+1664098445591	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "44115" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://localhost:44115/" "-no-remote" "-profile" "/tmp/rust_mozprofileyRG8az"
+[GFX1-]: glxtest: VA-API test failed: missing or old libva-drm library.
+1664098446513	Marionette	INFO	Marionette enabled
+1664098446519	Marionette	INFO	Listening on port 34547
+WebDriver BiDi listening on ws://localhost:44115
+Read port: 34547
+1664098446653	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileyRG8az/search.json.mozlz4", (void 0)))
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+DevTools listening on ws://localhost:44115/devtools/browser/63ca2d6c-dd4f-4bf8-a350-682ce5413cda
+Sep 25, 2022 3:04:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+
+
+Correct URL hit on firefox
+
+
+
+LogInToThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://flyegypt.avtra.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://flyegypt.avtra.com."
+JavaScript warning: https://flyegypt.avtra.com/webstatic/static/admin/js/common/common-bundle.js?v=PSS_8052_Fawry_PG_integration_20220922_01, line 10719: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+LogInToThePSSAdmin Test Case Execution Succeed at: 2022 09 25 15:04/
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogInToThePSSAdmin On firefox
+Test Passed Screenshot taken LogInToThePSSAdmin On firefox
+
+
+
+LogOutFromThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+LogOutFromThePSSAdmin Test Case Execution Failed at: 2022 09 25 15:04/
+
+
+
+org.openqa.selenium.ElementNotInteractableException: Element <a class="logout" href="/admin/logout?carrierCode=FT"> could not be scrolled into view
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'dell-inspiron-5559', ip: '192.168.1.100', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [b300cec5-c3fb-4cdd-a440-eb794251ed5c, clickElement {id=f84df1ef-3ac2-470c-8031-33986d1de71c}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 104.0, moz:accessibilityChecks: false, moz:buildID: 20220818191623, moz:debuggerAddress: localhost:44115, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:platformVersion: 5.3.0-59-generic, moz:processID: 11598, moz:profile: /tmp/rust_mozprofileyRG8az, moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:44115/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[FirefoxDriver: firefox on LINUX (b300cec5-c3fb-4cdd-a440-eb794251ed5c)] -> xpath: //a[@class='logout']]
+Session ID: b300cec5-c3fb-4cdd-a440-eb794251ed5c
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy23.click(Unknown Source)
+	at PSS_Pages.PSS_Home_Page.AdminHomePageMethods.clickLogoutButton(AdminHomePageMethods.java:17)
+	at PSSTestRunner.PSSTestRunner.LogOutFromThePSSAdmin(PSSTestRunner.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:110)
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogOutFromThePSSAdmin On firefox
+Test Failed Screenshot taken LogOutFromThePSSAdmin On firefox
+
+
+JavaScript warning: https://flyegypt.avtra.com/webstatic/static/admin/js/common/common-bundle.js?v=PSS_8052_Fawry_PG_integration_20220922_01, line 10719: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+
+
+1664098455557	CDP	ERROR	Invalid browser preferences for CDP. Set "fission.webContentIsolationStrategy"to 0 and "fission.bfcacheInParent" to false before Firefox starts.
+Sep 25, 2022 3:04:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 85
+1664098455593	Marionette	INFO	Stopped listening on port 34547
+Missing chrome or resource URL: resource://gre/modules/UpdateListener.sys.mjs
+console.error: "Error during quit-application-granted: [Exception... \"File error: Not found\"  nsresult: \"0x80520012 (NS_ERROR_FILE_NOT_FOUND)\"  location: \"JS frame :: resource:///modules/BrowserGlue.jsm :: _onQuitApplicationGranted/tasks< :: line 2013\"  data: no]"
+
+
+
+
+Starting Microsoft Edge WebDriver 105.0.1343.42 (a7d028ad84939118c075a140c44731eec59a559e) on port 48322
+To submit feedback, report a bug, or suggest new features, please visit https://github.com/MicrosoftEdge/EdgeWebDriver
+
+Only local connections are allowed.
+Please see https://aka.ms/WebDriverSecurity for suggestions on keeping Microsoft Edge WebDriver safe.
+
+Microsoft Edge WebDriver was started successfully.
+Sep 25, 2022 3:04:19 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+Sep 25, 2022 3:04:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 105, so returning the closest version found: 104
+Sep 25, 2022 3:04:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 105 of 104
+
+
+Correct URL hit on edge
+
+
+
+LogInToThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+LogInToThePSSAdmin Test Case Execution Succeed at: 2022 09 25 15:04/
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogInToThePSSAdmin On edge
+Test Passed Screenshot taken LogInToThePSSAdmin On edge
+
+
+
+LogOutFromThePSSAdmin Test Case Execution Started at: 2022 09 25 15:04/
+
+LogOutFromThePSSAdmin Test Case Execution Succeed at: 2022 09 25 15:04/
+
+
+This need to be run per each test methos / case
+Running the Test Case : LogOutFromThePSSAdmin On edge
+Test Passed Screenshot taken LogOutFromThePSSAdmin On edge
+
+
+
+
+
+
+2022 09 25 15:04/
+
+
+===============================================
+Test_Suite
+Total tests run: 6, Failures: 1, Skips: 0
+===============================================
+
