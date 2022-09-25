@@ -84,13 +84,7 @@ public class Utils extends Browser_Base{
         action.click(element).perform();
     }
 
-
-    //Capture Screen Shots start
-        @Parameters({ "browser"})
-        @AfterMethod
-
-        public void tearDown(ITestResult result, String browser) throws IOException {
-
+    public void appPropertyAccess () throws IOException {
         //Load Property File
         File src = new File(System.getProperty("user.dir") + "/App.properties");
         FileInputStream objfile = new FileInputStream(src);
@@ -98,6 +92,14 @@ public class Utils extends Browser_Base{
         obj.load(objfile);
         String setProjectPath = obj.getProperty("ProjectPath");
 
+    }
+
+
+    //Capture Screen Shots start
+        @Parameters({ "browser"})
+        @AfterMethod
+
+        public void tearDown(ITestResult result, String browser) throws IOException {
 
         test.log(LogStatus.INFO, driver + " - Test Case " + result.getName() + " Running");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
@@ -112,7 +114,7 @@ public class Utils extends Browser_Base{
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
+                FileUtils.copyFile(source, new File(System.getProperty("user.dir") + "/Screen_Capture_Result/Failure_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
 
                 System.out.println("Running the Test Case : " + result.getName() + " On " + browser);
                 System.out.println("Test Failed Screenshot taken " + result.getName() + " On " + browser);
@@ -131,7 +133,7 @@ public class Utils extends Browser_Base{
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
+                FileUtils.copyFile(source, new File(System.getProperty("user.dir") +  "/Screen_Capture_Result/Success_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
 
                 System.out.println("Running the Test Case : " + result.getName()+ " On " + browser);
                 System.out.println("Test Passed Screenshot taken " + result.getName()+ " On " + browser);
@@ -147,7 +149,7 @@ public class Utils extends Browser_Base{
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/"+ result.getName() + " On " + browser + ".png"));
+                FileUtils.copyFile(source, new File(System.getProperty("user.dir") +  "/Screen_Capture_Result/Skip_Screen_Capture/"+ result.getName() + " On " + browser + ".png"));
 
                 System.out.println("Running the Test Case : " + result.getName()+ " On " + browser);
                 System.out.println("Test Skiped Screenshot taken " + result.getName()+ " On " + browser);
