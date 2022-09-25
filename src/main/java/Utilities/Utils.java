@@ -84,6 +84,11 @@ public class Utils extends Browser_Base{
         action.click(element).perform();
     }
 
+    public void doubleClick (WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.doubleClick(element).perform();
+    }
+
     public void appPropertyAccess () throws IOException {
         //Load Property File
         File src = new File(System.getProperty("user.dir") + "/App.properties");
