@@ -52,15 +52,15 @@ public class Utils extends Browser_Base{
     //Implicit Wait end
 
     //Explicit Wait ElementVisible
-    public void explicitWaitElementVisible(String xpath) {
+    public void explicitWaitElementVisible(WebElement element) {
         WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        explicitwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        explicitwait.until(ExpectedConditions.visibilityOf(element ));
     }
 
     //Explicit Wait ElementClickable
-    public void explicitWaitElementClickable(String xpath) {
+    public void explicitWaitElementClickable(WebElement element) {
         WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        explicitwait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+        explicitwait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     //Fluent Wait ElementVisible
@@ -88,6 +88,8 @@ public class Utils extends Browser_Base{
         Actions actions = new Actions(driver);
         actions.doubleClick(element).perform();
     }
+
+
 
     public void appPropertyAccess () throws IOException {
         //Load Property File

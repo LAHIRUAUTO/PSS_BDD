@@ -71,7 +71,7 @@ public class TestReportSender {
             objMessageBodyPart2 = new MimeBodyPart();
             objMessageBodyPart3 = new MimeBodyPart();
 
-//Set path to the pdf report file
+//Set path to the report file
 
             String filename = System.getProperty("user.dir") +"/Extent_Reports/Test_Result.html";
             String filename2 = System.getProperty("user.dir") +"/Screen_Capture_Result.zip";

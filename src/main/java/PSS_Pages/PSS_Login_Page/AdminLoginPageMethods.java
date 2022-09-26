@@ -1,9 +1,14 @@
 package PSS_Pages.PSS_Login_Page;
+import java.io.IOException;
 
 public class AdminLoginPageMethods extends AdminLoginPageObjects {
 
+    public AdminLoginPageMethods() throws IOException {
+    }
+
     public void enterUsername (String username) {
         usernamelocator.sendKeys(username);
+
     }
 
     public void enterPassword (String password) {
@@ -11,6 +16,8 @@ public class AdminLoginPageMethods extends AdminLoginPageObjects {
     }
 
     public void clickLoginbutton (){
-        loginButtonlocator.click();
+        explicitWaitElementClickable(loginButtonlocator);
+        click(loginButtonlocator);
+
     }
 }

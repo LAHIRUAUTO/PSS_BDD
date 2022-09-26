@@ -8,13 +8,13 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
     }
 
     public void gotologgedInUserinfor() {
-        explicitWaitElementVisible ("/html/body/header/div[2]/div[2]/a/div\n");
+        explicitWaitElementVisible (userinfo);
         mouseHover(userinfo);
         //System.out.println(userinfo.getText());
     }
 
     public void clickToogleMenu () {
-        explicitWaitElementClickable("/html/body/header/a\n");
+        explicitWaitElementClickable(tooglemenu);
         click(tooglemenu);
     }
 
