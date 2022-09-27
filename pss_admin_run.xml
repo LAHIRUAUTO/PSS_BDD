@@ -22,7 +22,7 @@
                 <methods>
                     <include name="LogInToThePSSAdmin"/>
                     <include name="ClickOnToogleMenu"/>
-                    <include name="LogOutFromThePSSAdmin"/>
+                    <include name="ClickOnRole"/>
                 </methods>
             </class>
         </classes>

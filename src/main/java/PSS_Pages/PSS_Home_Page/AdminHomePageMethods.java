@@ -18,7 +18,21 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         click(tooglemenu);
     }
 
+    public void mouseHoweMaintenance () {
+        mouseHover(maintenancetab);
+    }
+
+    public void mouseHoweSecurity () {
+        mouseHover(security);
+    }
+
+    public void clickrole () {
+        explicitWaitElementVisible(role);
+        click(role);
+    }
+
     public void clickLogoutButton () {
+
         logoutbutton.click();
     }
 

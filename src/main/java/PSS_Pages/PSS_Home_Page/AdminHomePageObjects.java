@@ -9,6 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import java.io.IOException;
 
 public class AdminHomePageObjects extends Utils {
+
+    public AdminHomePageObjects() throws IOException {
+    }
+
+
     @FindBy(xpath = "/html/body/header/div[2]/div[2]/a/div\n")
     @CacheLookup
     WebElement userinfo;
@@ -33,6 +38,20 @@ public class AdminHomePageObjects extends Utils {
     @CacheLookup
     WebElement maintenancetab;
 
-    public AdminHomePageObjects() throws IOException {
-    }
+    @FindBy (xpath = "/html/body/header/nav/ul/li[2]/ul/li[1]/a\n")
+    @CacheLookup
+    WebElement security;
+
+    @FindBy (xpath = "/html/body/header/nav/ul/li[2]/ul/li[1]/ul/li[1]/a\n")
+    @CacheLookup
+    WebElement role;
+
+    @FindBy (xpath = "/html/body/header/nav/ul/li[2]/ul/li[1]/ul/li[2]/a\n")
+    @CacheLookup
+    WebElement functionalUsage;
+
+
+
+
+
 }

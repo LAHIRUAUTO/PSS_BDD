@@ -1,7 +1,7 @@
 
 
 
-2022 09 27 08:25/: Test suite started 
+2022 09 27 22:19/: Test suite started 
 
 
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
@@ -9,15 +9,15 @@ SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 log4j:WARN No appenders could be found for logger (io.netty.util.internal.logging.InternalLoggerFactory).
 log4j:WARN Please initialize the log4j system properly.
-Starting ChromeDriver 105.0.5195.52 (412c95e518836d8a7d97250d62b29c2ae6a26a85-refs/branch-heads/5195@{#853}) on port 49926
+Starting ChromeDriver 105.0.5195.52 (412c95e518836d8a7d97250d62b29c2ae6a26a85-refs/branch-heads/5195@{#853}) on port 36316
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Sep 27, 2022 8:25:26 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+Sep 27, 2022 10:19:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected upstream dialect: W3C
-Sep 27, 2022 8:25:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Sep 27, 2022 10:19:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 105, so returning the closest version found: 104
-Sep 27, 2022 8:25:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Sep 27, 2022 10:19:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 105 of 104
 
 
@@ -25,10 +25,10 @@ Correct URL hit on chrome
 
 
 
-LogInToThePSSAdmin Test Case Execution Started at: 2022 09 27 08:25/
 
-LogInToThePSSAdmin Test Case Execution Succeed at: 2022 09 27 08:25/
+LogInToThePSSAdmin Test Case Execution Started at: 2022 09 27 22:19/
 
+LogInToThePSSAdmin Test Case Execution Succeed at: 2022 09 27 22:19/
 
 This need to be run per each test methos / case
 Running the Test Case : LogInToThePSSAdmin On chrome
@@ -36,10 +36,10 @@ Test Passed Screenshot taken LogInToThePSSAdmin On chrome
 
 
 
-ClickOnToogleMenu Test Case Execution Started at: 2022 09 27 08:25/
 
-ClickOnToogleMenu Test Case Execution Succeed at: 2022 09 27 08:25/
+ClickOnToogleMenu Test Case Execution Started at: 2022 09 27 22:19/
 
+ClickOnToogleMenu Test Case Execution Succeed at: 2022 09 27 22:19/
 
 This need to be run per each test methos / case
 Running the Test Case : ClickOnToogleMenu On chrome
@@ -47,21 +47,21 @@ Test Passed Screenshot taken ClickOnToogleMenu On chrome
 
 
 
-LogOutFromThePSSAdmin Test Case Execution Started at: 2022 09 27 08:25/
 
-LogOutFromThePSSAdmin Test Case Execution Succeed at: 2022 09 27 08:25/
+ClickOnRole Test Case Execution Started at: 2022 09 27 22:19/
 
+ClickOnRole Test Case Execution Succeed at: 2022 09 27 22:19/
 
 This need to be run per each test methos / case
-Running the Test Case : LogOutFromThePSSAdmin On chrome
-Test Passed Screenshot taken LogOutFromThePSSAdmin On chrome
+Running the Test Case : ClickOnRole On chrome
+Test Passed Screenshot taken ClickOnRole On chrome
 
 
 
 
 
 
-2022 09 27 08:25/
+2022 09 27 22:19/
 
 
 ===============================================
