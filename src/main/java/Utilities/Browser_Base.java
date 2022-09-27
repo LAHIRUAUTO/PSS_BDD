@@ -1,5 +1,6 @@
 package Utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,25 +28,32 @@ public class Browser_Base {
         obj.load(objfile);
 
         if (browser.equalsIgnoreCase("chrome")) {
-            //set path to chromedriver.exe
-            System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/Drivers/chromedriver_linux64/chromedriver"));
-            //create chrome instance
+
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+            //set path to chromedriver.exe
+            //System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/Drivers/chromedriver_linux64/chromedriver"));
+            //create chrome instance
+            //driver = new ChromeDriver();
 
 
         }
         else if (browser.equalsIgnoreCase("firefox")){
-            //set path to firefoxdriver
-            System.setProperty("webdriver.gecko.driver", (System.getProperty("user.dir")+"/Drivers/geckodriver-v0.31.0-linux64/geckodriver"));
-            //create chrome instance
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            //set path to firefoxdriver
+            //System.setProperty("webdriver.gecko.driver", (System.getProperty("user.dir")+"/Drivers/geckodriver-v0.31.0-linux64/geckodriver"));
+            //create chrome instance
+            //driver = new FirefoxDriver();
         }
 
         else if (browser.equalsIgnoreCase("edge")){
-            //set path to edgedriver
-            System.setProperty("webdriver.edge.driver", (System.getProperty("user.dir")+"/Drivers/edgedriver_linux64/msedgedriver"));
-            //create chrome instance
+            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
+            //set path to edgedriver
+            //System.setProperty("webdriver.edge.driver", (System.getProperty("user.dir")+"/Drivers/edgedriver_linux64/msedgedriver"));
+            //create chrome instance
+            //driver = new EdgeDriver();
         }
 
         else {
