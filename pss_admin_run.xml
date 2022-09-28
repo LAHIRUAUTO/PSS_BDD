@@ -7,12 +7,12 @@
     </listeners>
 
     <!--Globle Parameters for All Browsers -->
-    <parameter name="Branch" value="PSS_Release_21.2 Patch-45"/>
+    <parameter name="Branch" value="${branch}"/><!--PSS_Release_21.2 Patch-46-->
     <parameter name="Module" value="PSS Admin Regression Test Result on "/>
     <parameter name="url" value="https://flyegypt.avtra.com/admin/login"/>
     <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
-    <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/>
+    <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com-->
     <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge-->
 
 
