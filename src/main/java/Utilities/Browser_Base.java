@@ -56,6 +56,18 @@ public class Browser_Base {
             //driver = new EdgeDriver();
         }
 
+        else if (browser.equalsIgnoreCase("chromeheadless")){
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions option = new ChromeOptions();
+            option.setHeadless(true);
+            driver = new ChromeDriver(option);
+
+            //set path to edgedriver
+            //System.setProperty("webdriver.edge.driver", (System.getProperty("user.dir")+"/Drivers/edgedriver_linux64/msedgedriver"));
+            //create chrome instance
+            //driver = new EdgeDriver();
+        }
+
         else {
             //If no browser passed throw exception
             throw new Exception("Browser is not correct");
