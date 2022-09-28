@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Test_Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="Branch" value="PSS_Release_21.2 Patch-45"/>
+  <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/>
+  <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
+  <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
+  <parameter name="Module" value="PSS Admin Regression Test Result on "/>
+  <parameter name="url" value="https://flyegypt.avtra.com/admin/login"/>
+  <listeners>
+    <listener class-name="Utilities.Listener"/>
+  </listeners>
+  <test thread-count="1" name="Sub_Suite_3(failed)" verbose="0">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="PSSTestRunner.PSSTestRunner">
+        <methods>
+          <include name="close"/>
+          <include name="LogInToThePSSAdmin"/>
+          <include name="endSuite"/>
+          <include name="implicitwait"/>
+          <include name="tearDown"/>
+          <include name="LogOutFromThePSSAdmin"/>
+          <include name="endTest"/>
+          <include name="validateCurrentURL"/>
+          <include name="Intialize"/>
+          <include name="startTest"/>
+        </methods>
+      </class> <!-- PSSTestRunner.PSSTestRunner -->
+    </classes>
+  </test> <!-- Sub_Suite_3(failed) -->
+</suite> <!-- Failed suite [Test_Suite] -->
