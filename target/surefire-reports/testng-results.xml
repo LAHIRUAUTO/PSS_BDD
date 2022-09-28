@@ -2,12 +2,12 @@
 <testng-results ignored="1" total="4" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-28T20:09:28Z" name="Test_Suite" finished-at="2022-09-28T20:09:36Z" duration-ms="8082">
+  <suite started-at="2022-09-28T20:20:55Z" name="Test_Suite" finished-at="2022-09-28T20:21:05Z" duration-ms="9889">
     <groups>
     </groups>
-    <test started-at="2022-09-28T20:09:28Z" name="Sub_Suite_1" finished-at="2022-09-28T20:09:36Z" duration-ms="8082">
+    <test started-at="2022-09-28T20:20:55Z" name="Sub_Suite_1" finished-at="2022-09-28T20:21:05Z" duration-ms="9889">
       <class name="PSSTestRunner.PSSTestRunner">
-        <test-method is-config="true" signature="startTest(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:28Z" name="startTest" finished-at="2022-09-28T20:09:28Z" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="startTest(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:20:55Z" name="startTest" finished-at="2022-09-28T20:20:55Z" duration-ms="497" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method is-config="true" signature="Intialize(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:28Z" name="Intialize" finished-at="2022-09-28T20:09:31Z" duration-ms="3169" status="PASS">
+        <test-method is-config="true" signature="Intialize(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:20:55Z" name="Intialize" finished-at="2022-09-28T20:21:00Z" duration-ms="4546" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,7 +39,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Intialize -->
-        <test-method is-config="true" signature="validateCurrentURL(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:31Z" name="validateCurrentURL" finished-at="2022-09-28T20:09:31Z" depends-on-methods="Utilities.Browser_Base.Intialize" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="validateCurrentURL(java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:00Z" name="validateCurrentURL" finished-at="2022-09-28T20:21:00Z" depends-on-methods="Utilities.Browser_Base.Intialize" duration-ms="19" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,15 +55,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateCurrentURL -->
-        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:31Z" name="implicitwait" finished-at="2022-09-28T20:09:31Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:00Z" name="implicitwait" finished-at="2022-09-28T20:21:00Z" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implicitwait -->
-        <test-method signature="LogInToThePSSAdmin()[pri:1, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:31Z" name="LogInToThePSSAdmin" description="PSS Log in test case" finished-at="2022-09-28T20:09:34Z" duration-ms="2171" status="PASS">
+        <test-method signature="LogInToThePSSAdmin()[pri:1, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:00Z" name="LogInToThePSSAdmin" description="PSS Log in test case" finished-at="2022-09-28T20:21:02Z" duration-ms="2496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogInToThePSSAdmin -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:34Z" name="tearDown" finished-at="2022-09-28T20:09:34Z" duration-ms="545" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:02Z" name="tearDown" finished-at="2022-09-28T20:21:02Z" duration-ms="275" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,15 +79,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:34Z" name="implicitwait" finished-at="2022-09-28T20:09:34Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:02Z" name="implicitwait" finished-at="2022-09-28T20:21:02Z" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implicitwait -->
-        <test-method signature="ClickOnToogleMenu()[pri:1, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:34Z" name="ClickOnToogleMenu" description="Click on toogle menu test case" finished-at="2022-09-28T20:09:35Z" duration-ms="571" status="PASS">
+        <test-method signature="ClickOnToogleMenu()[pri:1, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:02Z" name="ClickOnToogleMenu" description="Click on toogle menu test case" finished-at="2022-09-28T20:21:03Z" duration-ms="957" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClickOnToogleMenu -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:35Z" name="tearDown" finished-at="2022-09-28T20:09:35Z" duration-ms="248" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:03Z" name="tearDown" finished-at="2022-09-28T20:21:04Z" duration-ms="228" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,15 +103,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:35Z" name="implicitwait" finished-at="2022-09-28T20:09:35Z" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="implicitwait()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:04Z" name="implicitwait" finished-at="2022-09-28T20:21:04Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implicitwait -->
-        <test-method signature="ClickOnRole()[pri:2, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:35Z" name="ClickOnRole" description="Click on toogle menu test case" finished-at="2022-09-28T20:09:36Z" depends-on-methods="PSSTestRunner.PSSTestRunner.ClickOnToogleMenu, PSSTestRunner.PSSTestRunner.LogInToThePSSAdmin" duration-ms="625" status="PASS">
+        <test-method signature="ClickOnRole()[pri:2, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:04Z" name="ClickOnRole" description="Click on toogle menu test case" finished-at="2022-09-28T20:21:04Z" depends-on-methods="PSSTestRunner.PSSTestRunner.ClickOnToogleMenu, PSSTestRunner.PSSTestRunner.LogInToThePSSAdmin" duration-ms="591" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClickOnRole -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:36Z" name="tearDown" finished-at="2022-09-28T20:09:36Z" duration-ms="435" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:04Z" name="tearDown" finished-at="2022-09-28T20:21:04Z" duration-ms="220" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -127,15 +127,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:36Z" name="endTest" finished-at="2022-09-28T20:09:36Z" duration-ms="275" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:04Z" name="endTest" finished-at="2022-09-28T20:21:05Z" duration-ms="501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="close()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:36Z" name="close" finished-at="2022-09-28T20:09:36Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:05Z" name="close" finished-at="2022-09-28T20:21:05Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method is-config="true" signature="endSuite(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:09:36Z" name="endSuite" finished-at="2022-09-28T20:09:44Z" duration-ms="7248" status="PASS">
+        <test-method is-config="true" signature="endSuite(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:PSSTestRunner.PSSTestRunner@747ddf94]" started-at="2022-09-28T20:21:05Z" name="endSuite" finished-at="2022-09-28T20:21:14Z" duration-ms="8682" status="PASS">
           <params>
             <param index="0">
               <value>

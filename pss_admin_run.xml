@@ -49,7 +49,7 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test> -->
     <test verbose="2" preserve-order="true" name="Sub_Suite_3">
         <parameter name="browser" value="edge"/>
         <classes>
@@ -60,5 +60,5 @@
                 </methods>
             </class>
         </classes>
-    </test>-->
+    </test>
 </suite>
