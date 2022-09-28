@@ -14,7 +14,7 @@
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
     <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/>
 
-    <test verbose="2" preserve-order="true" name="Sub_Suite_1">
+    <!--<test verbose="2" preserve-order="true" name="Sub_Suite_1">
         <parameter name="browser" value="chromeheadless"/>
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">
@@ -25,9 +25,9 @@
                 </methods>
             </class>
         </classes>
-    </test>
+    </test>-->
 
-    <!--<test verbose="2" preserve-order="true" name="Sub_Suite_1">
+    <test verbose="2" preserve-order="true" name="Sub_Suite_1">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">
@@ -39,7 +39,7 @@
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="Sub_Suite_2">
+    <!--<test verbose="2" preserve-order="true" name="Sub_Suite_2">
         <parameter name="browser" value="firefox"/>
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">
