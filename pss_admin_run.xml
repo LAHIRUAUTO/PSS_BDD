@@ -13,7 +13,7 @@
     <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
     <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com-->
-    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge-->
+    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge / chromeheadless-->
 
 
 

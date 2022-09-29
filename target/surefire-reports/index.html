@@ -172,9 +172,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; name=&quot;Test_Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;parameter name=&quot;Branch&quot; value=&quot;PSS_Release_21.2 Patch-45&quot;/&gt;
+  &lt;parameter name=&quot;Branch&quot; value=&quot;PSS_Release_21.2 Patch-46&quot;/&gt;
   &lt;parameter name=&quot;TestReportReceiverMailAddress&quot; value=&quot;vikasithasouth@gmail.com&quot;/&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;edge&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;chromeheadless&quot;/&gt;
   &lt;parameter name=&quot;TestReportSenderMailAddress&quot; value=&quot;dcs.selenium.report@gmail.com&quot;/&gt;
   &lt;parameter name=&quot;TestReportSenderMailPassword&quot; value=&quot;lmsbruovggrocqxk&quot;/&gt;
   &lt;parameter name=&quot;Module&quot; value=&quot;PSS Admin Regression Test Result on &quot;/&gt;
@@ -234,20 +234,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'LogInToThePSSAdmin')
 data.setCell(0, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(0, 3, 2345);
+data.setCell(0, 3, 2883);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'ClickOnToogleMenu')
 data.setCell(1, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(1, 3, 773);
+data.setCell(1, 3, 1307);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'ClickOnRole')
 data.setCell(2, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(2, 3, 684);
+data.setCell(2, 3, 483);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -282,64 +282,64 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">PSSTestRunner.PSSTestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">startTest(PSS_Release_21.2 Patch-45, PSS Admin Regression Test Result on )</span>
+                <span class="method-name">startTest(PSS_Release_21.2 Patch-46, PSS Admin Regression Test Result on )</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">Intialize(edge, https://flyegypt.avtra.com/admin/login)</span>
-                <span class="method-start">245 ms</span>
+                <span class="method-name">Intialize(chromeheadless, https://flyegypt.avtra.com/admin/login)</span>
+                <span class="method-start">460 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
-                <span class="method-name">validateCurrentURL(https://flyegypt.avtra.com/admin/login, edge)</span>
-                <span class="method-start">4151 ms</span>
+                <span class="method-name">validateCurrentURL(https://flyegypt.avtra.com/admin/login, chromeheadless)</span>
+                <span class="method-start">7245 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">4171 ms</span>
+                <span class="method-start">7300 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">LogInToThePSSAdmin</span>
-                <span class="method-start">4177 ms</span>
+                <span class="method-start">7310 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=LogInToThePSSAdmin status=SUCCESS method=PSSTestRunner.LogInToThePSSAdmin()[pri:1, ...)</span>
-                <span class="method-start">6525 ms</span>
+                <span class="method-start">10199 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">7070 ms</span>
+                <span class="method-start">10316 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">ClickOnToogleMenu</span>
-                <span class="method-start">7075 ms</span>
+                <span class="method-start">10325 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=ClickOnToogleMenu status=SUCCESS method=PSSTestRunner.ClickOnToogleMenu()[pri:1, in...)</span>
-                <span class="method-start">7851 ms</span>
+                <span class="method-start">11633 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">8109 ms</span>
+                <span class="method-start">11741 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">ClickOnRole</span>
-                <span class="method-start">8118 ms</span>
+                <span class="method-start">11747 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=ClickOnRole status=SUCCESS method=PSSTestRunner.ClickOnRole()[pri:2, instance:PSSTe...)</span>
-                <span class="method-start">8803 ms</span>
+                <span class="method-start">12231 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">endTest</span>
-                <span class="method-start">9072 ms</span>
+                <span class="method-start">12304 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">close</span>
-                <span class="method-start">9805 ms</span>
+                <span class="method-start">12814 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <span class="method-name">endSuite(PSS_Release_21.2 Patch-45, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsb...)</span>
-                <span class="method-start">9833 ms</span>
+                <span class="method-name">endSuite(PSS_Release_21.2 Patch-46, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsb...)</span>
+                <span class="method-start">12912 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
