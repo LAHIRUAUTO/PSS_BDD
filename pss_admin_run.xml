@@ -12,8 +12,8 @@
     <parameter name="url" value="https://flyegypt.avtra.com/admin/login"/>
     <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
-    <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com-->
-    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge / chromeheadless-->
+    <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com / ${reportReceiverMail}-->
+    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge / chromeheadless / ${browserName}-->
 
 
 

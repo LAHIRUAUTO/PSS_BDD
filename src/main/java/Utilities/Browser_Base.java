@@ -27,52 +27,34 @@ public class Browser_Base {
         Properties obj = new Properties();
         obj.load(objfile);
 
-        if (browser.equalsIgnoreCase("chrome")) {
+        switch (browser) {
+            case "chrome" :
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                //System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/Drivers/chromedriver_linux64/chromedriver"));
+                //create chrome instance
+                //driver = new ChromeDriver();
+                break;
+            case "firefox" :
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+                break;
+            case "edge" :
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+                break;
+            case "chromeheadless" :
+                WebDriverManager.chromedriver().setup();
+                ChromeOptions option = new ChromeOptions();
+                option.setHeadless(true);
+                driver = new ChromeDriver(option);
 
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-            //set path to chromedriver.exe
-            //System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/Drivers/chromedriver_linux64/chromedriver"));
-            //create chrome instance
-            //driver = new ChromeDriver();
+            default:
+                throw new Exception("Browser is not correct");
+
 
 
         }
-        else if (browser.equalsIgnoreCase("firefox")){
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-            //set path to firefoxdriver
-            //System.setProperty("webdriver.gecko.driver", (System.getProperty("user.dir")+"/Drivers/geckodriver-v0.31.0-linux64/geckodriver"));
-            //create chrome instance
-            //driver = new FirefoxDriver();
-        }
-
-        else if (browser.equalsIgnoreCase("edge")){
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-            //set path to edgedriver
-            //System.setProperty("webdriver.edge.driver", (System.getProperty("user.dir")+"/Drivers/edgedriver_linux64/msedgedriver"));
-            //create chrome instance
-            //driver = new EdgeDriver();
-        }
-
-        else if (browser.equalsIgnoreCase("chromeheadless")){
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions option = new ChromeOptions();
-            option.setHeadless(true);
-            driver = new ChromeDriver(option);
-
-            //set path to edgedriver
-            //System.setProperty("webdriver.edge.driver", (System.getProperty("user.dir")+"/Drivers/edgedriver_linux64/msedgedriver"));
-            //create chrome instance
-            //driver = new EdgeDriver();
-        }
-
-        else {
-            //If no browser passed throw exception
-            throw new Exception("Browser is not correct");
-        }
-
         driver.get(url);
         driver.manage().window().maximize();
 
