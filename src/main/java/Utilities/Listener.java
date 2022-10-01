@@ -22,7 +22,6 @@ public class Listener extends TestListenerAdapter {
     static ExtentTest test;
     static ExtentReports report;
 
-    @Override
     public void onTestStart(ITestResult result) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
@@ -32,7 +31,6 @@ public class Listener extends TestListenerAdapter {
 
 
 
-    @Override
     public void onTestSuccess(ITestResult result) {
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
@@ -41,7 +39,6 @@ public class Listener extends TestListenerAdapter {
 
     }
 
-    @Override
     public void onTestFailure(ITestResult result) {
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
@@ -50,7 +47,6 @@ public class Listener extends TestListenerAdapter {
 
     }
 
-    @Override
     public void onTestSkipped(ITestResult result) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
@@ -58,17 +54,15 @@ public class Listener extends TestListenerAdapter {
 
     }
 
-    @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
     }
 
-    @Override
     public void onStart(ITestContext context) {
 
     }
 
-    @Override
+
     public void onFinish(ITestContext context) {
 
     }
