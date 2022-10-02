@@ -1,5 +1,7 @@
 package PSS_Pages.PSS_Home_Page;
 
+import org.openqa.selenium.By;
+
 import java.io.IOException;
 
 public class AdminHomePageMethods extends AdminHomePageObjects{
@@ -37,6 +39,27 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         explicitWaitElementVisible(role);
         click(role);
     }
+
+    public void swithToIframe () {
+        driver.switchTo().frame(1);
+
+    }
+
+    public void enterRoleName (String rolename) {
+        //explicitWaitElementVisible(roleNameFieldLocator);
+        roleNameFieldLocator.sendKeys(rolename);
+    }
+
+    public void clickSearchButton () {
+        explicitWaitElementVisible(searchButtonLocator);
+        searchButtonLocator.click();
+    }
+
+    public void clickRoleName () {
+        explicitWaitElementVisible(roleNameLocator);
+        doubleClick(roleNameLocator);
+    }
+
 
     public void clickLogoutButton () {
 

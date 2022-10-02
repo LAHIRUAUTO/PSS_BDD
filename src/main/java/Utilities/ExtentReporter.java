@@ -26,7 +26,7 @@ public class ExtentReporter extends Browser_Base{
 
         ExtentReports extent = new ExtentReports();
         extent.attachReporter(reporter);
-        extent.setSystemInfo("Tester : ", "");
+        extent.setSystemInfo("Tester : ", "Lahiru Vikasitha");
         extent.getStats();
         return extent;
 

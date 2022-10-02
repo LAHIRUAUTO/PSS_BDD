@@ -26,7 +26,8 @@
                 <methods>
                     <include name="LogInToThePSSAdmin"/>
                     <include name="ClickOnToogleMenu"/>
-                    <include name="ClickOnRole"/>
+                    <include name="SearchForRoles"/>
+                    <exclude name="LogOutFromThePSSAdmin"/>
                 </methods>
             </class>
         </classes>

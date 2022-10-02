@@ -1,18 +1,12 @@
 package Utilities;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
-import org.dom4j.Branch;
-import org.junit.experimental.theories.suppliers.TestedOn;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.*;
@@ -170,6 +164,11 @@ public class Utils extends Browser_Base{
         TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ branch, "Dear Mr Vikasitha,");
     }
     //1Slite0614
+
+    @DataProvider
+    public Object[][] getData () {
+        return new Object [][] {{},{}};
+    }
 
 
 

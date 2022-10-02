@@ -23,6 +23,8 @@ public class PSSTestRunner extends Utils {
     FileInputStream fs = new FileInputStream(FilePath);
     Workbook wb = Workbook.getWorkbook(fs);
     Sheet PSSAdminLogginSh = wb.getSheet("PssAdminLoggin");
+    Sheet PSSAdminHomaPageSh = wb.getSheet("PssAdminHomePage");
+
 
     public PSSTestRunner() throws IOException, BiffException {
     }
@@ -55,7 +57,7 @@ public class PSSTestRunner extends Utils {
         newadminhomepage.mouseHoweDashBooard();
     }
 
-    @Test (priority = 1, retryAnalyzer = Authenticator.Retry.class, description = "Click on toogle menu test case")
+    @Test (dependsOnMethods = {"LogInToThePSSAdmin"},priority = 1, retryAnalyzer = Authenticator.Retry.class, description = "Click on toogle menu test case")
     public void ClickOnToogleMenu (){
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         newadminhomepage.clickToogleMenu();
@@ -64,11 +66,18 @@ public class PSSTestRunner extends Utils {
     }
 
     @Test (dependsOnMethods = {"LogInToThePSSAdmin", "ClickOnToogleMenu"}, priority = 2, retryAnalyzer = Authenticator.Retry.class, description = "Click on toogle menu test case")
-    public void ClickOnRole () {
+    public void SearchForRoles () {
+        String rolename = PSSAdminHomaPageSh.getCell("A2").getContents();
+
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         newadminhomepage.mouseHoweMaintenance();
         newadminhomepage.mouseHoweSecurity();
         newadminhomepage.clickrole();
+        newadminhomepage.swithToIframe();
+        newadminhomepage.enterRoleName(rolename);
+        newadminhomepage.clickSearchButton();
+        newadminhomepage.clickRoleName();
+
     }
 
     @Test (dependsOnMethods = {"LogInToThePSSAdmin"}, priority = 2, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log out test case")
