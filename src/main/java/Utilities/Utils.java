@@ -24,26 +24,6 @@ import java.util.Properties;
 
 public class Utils extends Browser_Base{
 
-    //Generate Extent Report start
-    static ExtentTest test;
-    static ExtentReports report;
-
-    public Utils() throws IOException {
-    }
-
-    @Parameters ({"Branch", "Module"})
-    @BeforeSuite
-    public static void startTest(String Branch, String Module) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now) + ": Test suite started ");
-        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/Test_Result.html", true);
-        test = report.startTest(Module + Branch);
-
-    }
-    //Generate Extent Report end
-
-
     //Implicit Wait start
     @BeforeMethod
     public static void implicitwait () {
@@ -101,8 +81,16 @@ public class Utils extends Browser_Base{
 
     }
 
+    public String getScreenshot (String testCaseName) throws IOException {
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        File file = new File(System.getProperty("user.dir")+"/Screen_Capture_Result"+testCaseName+".png");
+        FileUtils.copyFile(source, file);
+        return System.getProperty("user.dir")+"/Screen_Capture_Result"+testCaseName+".png";
+    }
 
-    //Capture Screen Shots start
+
+    /*//Capture Screen Shots start
         @Parameters({ "browser"})
         @AfterMethod
 
@@ -166,17 +154,8 @@ public class Utils extends Browser_Base{
             }
         }
     }
-    //Capture Screen Shots ends
+    //Capture Screen Shots ends*/
 
-
-
-    //Generate Extent Report post steps
-    @AfterClass
-    public static void endTest() {
-        report.endTest(test);
-        report.flush();
-
-    }
 
     @Parameters ({"Branch", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
     @AfterSuite

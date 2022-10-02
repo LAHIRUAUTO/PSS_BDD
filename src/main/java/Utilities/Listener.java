@@ -1,11 +1,13 @@
 package Utilities;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
 import org.testng.annotations.Parameters;
@@ -18,56 +20,56 @@ import java.time.format.DateTimeFormatter;
 import java.util.GregorianCalendar;
 
 
-public class Listener extends TestListenerAdapter {
-    static ExtentTest test;
-    static ExtentReports report;
+public class Listener extends Utils implements ITestListener {
+    ExtentTest test;
 
+    static ExtentReports extent = ExtentReporter.getReportObj ();
+    @Override
     public void onTestStart(ITestResult result) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        Listener( result.getName()+ " Test Case Execution Started at: " + dtf.format(now));
+        test = extent.createTest(result.getMethod().getMethodName());
 
     }
 
-
-
+    @Override
     public void onTestSuccess(ITestResult result) {
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        Listener( result.getName()+ " Test Case Execution Succeed at: " + dtf.format(now));
+        test.log(Status.PASS, "Test Passed");
 
     }
 
+    @Override
     public void onTestFailure(ITestResult result) {
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        Listener( result.getName()+ " Test Case Execution Failed at: " + dtf.format(now));
+        test.log(Status.FAIL, "Test Faied");
+        test.fail(result.getThrowable());
+        String filePath = null;
+        try {
+            filePath = getScreenshot(result.getMethod().getMethodName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName() );
 
     }
 
+    @Override
     public void onTestSkipped(ITestResult result) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        Listener( result.getName()+ " Test Case Execution Skipped at: " + dtf.format(now));
+        test.log(Status.SKIP, "Test Skipped");
+
 
     }
 
+    @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
     }
 
+    @Override
     public void onStart(ITestContext context) {
 
     }
 
-
+    @Override
     public void onFinish(ITestContext context) {
-
+        extent.flush();
     }
 
-    private void Listener(String methodName) {
-        System.out.println(methodName);
-    }
 }
