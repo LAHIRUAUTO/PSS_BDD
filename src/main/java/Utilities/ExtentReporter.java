@@ -26,10 +26,5 @@ public class ExtentReporter extends Browser_Base{
         return extent;
 
     }
-    @AfterClass
-    public static void endTest() {
-        extent.flush();
-
-    }
 
 }
