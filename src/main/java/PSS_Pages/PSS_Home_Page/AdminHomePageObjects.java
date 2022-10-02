@@ -30,6 +30,10 @@ public class AdminHomePageObjects extends Utils {
     @CacheLookup
     WebElement logoutbutton;
 
+    @FindBy(xpath = "//*[@id=\"ui-id-2\"]\n")
+    @CacheLookup
+    WebElement dashboard;
+
     @FindBy(xpath = "/html/body/header/a\n")
     @CacheLookup
     WebElement tooglemenu;

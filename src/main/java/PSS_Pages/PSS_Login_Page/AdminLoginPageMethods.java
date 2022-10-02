@@ -20,4 +20,9 @@ public class AdminLoginPageMethods extends AdminLoginPageObjects {
         click(loginButtonlocator);
 
     }
+
+    public String title (){
+        driver.getTitle();
+        return title();
+    }
 }

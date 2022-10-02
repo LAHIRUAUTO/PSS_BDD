@@ -19,8 +19,13 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
     }
 
     public void mouseHoweMaintenance () {
-
+        fluentWaitElementVisible(maintenancetab);
         mouseHover(maintenancetab);
+    }
+
+    public void mouseHoweDashBooard () {
+        fluentWaitElementVisible(dashboard);
+        mouseHover(dashboard);
     }
 
     public void mouseHoweSecurity () {

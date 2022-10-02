@@ -26,6 +26,7 @@ public class PSSTestRunner extends Utils {
 
     public PSSTestRunner() throws IOException, BiffException {
     }
+
     @Parameters({"url", "browser"})
     @BeforeTest
     public void validateCurrentURL (String url, String browser){
@@ -39,19 +40,19 @@ public class PSSTestRunner extends Utils {
         }
     }
 
-
-
+    @Parameters({"title"})
     @Test (priority = 1, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log in test case")
-    public void LogInToThePSSAdmin (){
+    public void LogInToThePSSAdmin (String title){
         String username = PSSAdminLogginSh.getCell("A2").getContents();
         String password = PSSAdminLogginSh.getCell("B2").getContents();
 
         AdminLoginPageMethods newadminloginpage = PageFactory.initElements(driver, AdminLoginPageMethods.class);
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         newadminloginpage.enterUsername(username);
         newadminloginpage.enterPassword(password);
         newadminloginpage.clickLoginbutton();
-
-
+        System.out.println(driver.getTitle());
+        newadminhomepage.mouseHoweDashBooard();
     }
 
     @Test (priority = 1, retryAnalyzer = Authenticator.Retry.class, description = "Click on toogle menu test case")

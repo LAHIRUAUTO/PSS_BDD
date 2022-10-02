@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 36.613 s <<< FAILURE! - in TestSuite
+PSSTestRunner.PSSTestRunner.ClickOnToogleMenu  Time elapsed: 20.848 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/header/a
+' (tried for 10 second(s) with 500 milliseconds interval)
+	at PSSTestRunner.PSSTestRunner.ClickOnToogleMenu(PSSTestRunner.java:60)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/header/a
+"}
+  (Session info: chrome=105.0.5195.125)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'dell-inspiron-5559', ip: '192.168.1.100', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [799d1e5a7aaa21142f12e0ea95d55900, findElement {using=xpath, value=/html/body/header/a
+}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.125, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: /tmp/.com.google.Chrome.U0Di86}, goog:chromeOptions: {debuggerAddress: localhost:35365}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:35365/devtoo..., se:cdpVersion: 105.0.5195.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 799d1e5a7aaa21142f12e0ea95d55900
+	at PSSTestRunner.PSSTestRunner.ClickOnToogleMenu(PSSTestRunner.java:60)
+

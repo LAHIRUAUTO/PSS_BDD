@@ -44,11 +44,12 @@ public class Utils extends Browser_Base{
     }
 
     //Fluent Wait ElementVisible
-    public void fluentWaitElementVisible(String xpath) {
+    public void fluentWaitElementVisible(WebElement element) {
         Wait<WebDriver> wait= new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class);
+                wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 
@@ -80,14 +81,16 @@ public class Utils extends Browser_Base{
         String setProjectPath = obj.getProperty("ProjectPath");
 
     }
-
+    /*Get Screen shot start*/
     public String getScreenshot (String testCaseName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir")+"/Screen_Capture_Result"+testCaseName+".png");
+        File file = new File(System.getProperty("user.dir")+"/Screen_Capture_Result/"+testCaseName+".png");
         FileUtils.copyFile(source, file);
-        return System.getProperty("user.dir")+"/Screen_Capture_Result"+testCaseName+".png";
+        return System.getProperty("user.dir")+"/Screen_Capture_Result/"+testCaseName+".png";
     }
+    /*Get Screen shot end*/
+
 
 
     /*//Capture Screen Shots start

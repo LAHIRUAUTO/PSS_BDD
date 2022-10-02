@@ -248,7 +248,7 @@
                             <suiteXmlFile>pss_admin_run.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
-                </plugin>
+                </plugin>-
 
         </plugins>
     </build>

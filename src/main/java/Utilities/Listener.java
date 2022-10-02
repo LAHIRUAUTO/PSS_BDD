@@ -24,6 +24,7 @@ public class Listener extends Utils implements ITestListener {
     ExtentTest test;
 
     static ExtentReports extent = ExtentReporter.getReportObj ();
+
     @Override
     public void onTestStart(ITestResult result) {
         test = extent.createTest(result.getMethod().getMethodName());
@@ -33,6 +34,13 @@ public class Listener extends Utils implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         test.log(Status.PASS, "Test Passed");
+        String filePath = null;
+        try {
+            filePath = getScreenshot(result.getMethod().getMethodName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName() );
 
     }
 
@@ -53,6 +61,8 @@ public class Listener extends Utils implements ITestListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         test.log(Status.SKIP, "Test Skipped");
+        test.skip(result.getThrowable());
+
 
 
     }
