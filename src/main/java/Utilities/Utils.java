@@ -191,7 +191,7 @@ public class Utils extends Browser_Base{
     //Capture Screen Shots ends*/
 
 
-    @Parameters ({"Branch", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
+    @Parameters ({"branch", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
     @AfterSuite
     public static void endSuite(String branch, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");

@@ -7,7 +7,7 @@
     </listeners>
 
     <!--Globle Parameters for All Browsers -->
-    <parameter name="Branch" value="${branch}"/><!--PSS_Release_21.2 Patch-47-->
+    <parameter name="branch" value="${branch}"/><!--PSS_Release_21.2 Patch-47-->
     <parameter name="Module" value="PSS Admin Regression Test Result on "/>
     <parameter name="url" value="https://flyegypt.avtra.com/admin/login"/>
     <parameter name="title" value="CRS"/>
@@ -24,11 +24,15 @@
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">
                 <methods>
-                    <include name="LogInToThePSSAdmin"/>
-                    <include name="SearchForRoles"/>
-                    <include name="SearchForFunctionalUsage"/>
-                    <include name="SearchForAirports"/>
-                    <exclude name="LogOutFromThePSSAdmin"/>
+                    <include name="logInToThePSSAdmin"/>
+                    <include name="searchForRoles"/>
+                    <include name="searchForFunctionalUsage"/>
+                    <include name="searchForAirports"/>
+                    <include name="addAirports"/>
+                    <include name="searchForAirportsDST"/>
+                    <include name="addAirportsDST"/>
+                    <include name="searchForCity"/>
+                    <exclude name="logOutFromThePSSAdmin"/>
                 </methods>
             </class>
         </classes>

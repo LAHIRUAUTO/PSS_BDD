@@ -8,7 +8,6 @@ import PSS_Pages.PSS_Security_Page.AdminSecurityPageMethods;
 import Utilities.TestNGDataProvider;
 import Utilities.Utils;
 import com.sun.net.httpserver.Authenticator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -26,7 +25,7 @@ public class PSSTestRunner extends Utils {
 
     @Parameters({"title"})
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class)
-    public void LogInToThePSSAdmin (String username, String password){
+    public void logInToThePSSAdmin(String username, String password){
 
         AdminLoginPageMethods newadminloginpage = PageFactory.initElements(driver, AdminLoginPageMethods.class);
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
@@ -39,8 +38,8 @@ public class PSSTestRunner extends Utils {
     }
 
 
-    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"LogInToThePSSAdmin"})
-    public void SearchForRoles (String rolename) throws InterruptedException {
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForRoles(String rolename) throws InterruptedException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminSecurityPageMethods newadminrolepage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
@@ -59,8 +58,8 @@ public class PSSTestRunner extends Utils {
 
     }
 
-    @Test (dependsOnMethods = {"LogInToThePSSAdmin"})
-    public void SearchForFunctionalUsage () throws InterruptedException {
+    @Test (dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForFunctionalUsage() throws InterruptedException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminSecurityPageMethods newadminsecuritypage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
@@ -78,8 +77,8 @@ public class PSSTestRunner extends Utils {
 
     }
 
-    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"LogInToThePSSAdmin"})
-    public void SearchForAirports (String airportCode) throws InterruptedException {
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForAirports(String airportCode) throws InterruptedException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
@@ -98,8 +97,82 @@ public class PSSTestRunner extends Utils {
 
     }
 
-    @Test (dependsOnMethods = {"LogInToThePSSAdmin"}, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log out test case")
-    public void LogOutFromThePSSAdmin (){
+    @Test ( dependsOnMethods = {"logInToThePSSAdmin"})
+    public void addAirports () throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickAirport();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickAddAirportDSTButtonLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+
+
+    }
+
+    @Test (dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForAirportsDST() throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickAirportDST();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickAirportDSTSearchButtonLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+
+
+    }
+
+    @Test (dependsOnMethods = {"logInToThePSSAdmin"})
+    public void addAirportsDST () throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickAirportDST();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickAirportDSTSearchButtonLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+
+
+    }
+
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForCity(String countryName) throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickCity  ();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.selectcountry(countryName);
+        newadmingeographypage.clickCitySearchButtonLocator();
+        newadmingeographypage.clickCityLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+
+
+    }
+
+    @Test (dependsOnMethods = {"logInToThePSSAdmin"}, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log out test case")
+    public void logOutFromThePSSAdmin(){
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         newadminhomepage.gotologgedInUserinfor();

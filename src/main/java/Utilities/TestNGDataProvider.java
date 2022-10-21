@@ -44,6 +44,12 @@ public class TestNGDataProvider extends Utils {
                     {PSSAdminHomaPageSh.getCell("A3").getContents()}
 
             };
+
+        } else if (methodName.getName().equalsIgnoreCase("searchForCity")) {
+            return new Object[][] {
+                    {PSSAdminHomaPageSh.getCell("A4").getContents()}
+
+            };
         } else {
             throw new Exception("Incorrect Method name identified");
         }

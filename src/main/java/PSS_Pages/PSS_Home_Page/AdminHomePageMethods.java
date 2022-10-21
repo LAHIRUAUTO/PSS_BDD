@@ -66,7 +66,16 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
     }
 
     public void clickAirport () {
+
         airport.click();
+    }
+
+    public void clickAirportDST () {
+        airportDST.click();
+    }
+
+    public void clickCity () {
+        city.click();
     }
 
 

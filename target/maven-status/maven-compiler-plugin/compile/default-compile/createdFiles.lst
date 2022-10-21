@@ -4,10 +4,12 @@ Utilities/Listener.class
 PSS_Pages/PSS_Home_Page/AdminHomePageObjects.class
 Utilities/TestNGDataProvider.class
 Utilities/Browser_Base.class
+PSS_Pages/PSS_Security_Page/AdminSecurityPageMethods.class
+PSS_Pages/PSS_Security_Page/AdminSecurityPageObjects.class
 Utilities/Utils.class
-PSS_Pages/PSS_Role_Page/AdminRolePageMethods.class
+PSS_Pages/PSS_Geography_Page/AdminGeographyPageObjects.class
+PSS_Pages/PSS_Geography_Page/AdminGeographyPageMethods.class
 Utilities/ZipUtils.class
 Utilities/ExtentReporter.class
 PSS_Pages/PSS_Login_Page/AdminLoginPageMethods.class
 Utilities/TestReportSender.class
-PSS_Pages/PSS_Role_Page/AdminRolePageObjects.class
