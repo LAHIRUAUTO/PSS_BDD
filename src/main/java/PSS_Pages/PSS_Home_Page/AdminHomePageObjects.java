@@ -54,17 +54,15 @@ public class AdminHomePageObjects extends Utils {
     @CacheLookup
     WebElement functionalUsage;
 
-    @FindBy (xpath = "//*[@id=\"roleName\"]")
-    @CacheLookup
-    WebElement roleNameFieldLocator;
+    @FindBy (xpath = "/html[1]/body[1]/header[1]/nav[1]/ul[1]/li[2]/ul[1]/li[2]/a[1]")
+    WebElement geography;
 
-    @FindBy (xpath = "//*[@id=\"btnSearch\"]")
-    @CacheLookup
-    WebElement searchButtonLocator;
+    @FindBy (xpath = "//a[@class='airport']")
+    WebElement airport;
 
-    @FindBy (xpath = "/html/body/section/section[1]/section[2]/section/div[1]/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td[2]")
-    @CacheLookup
-    WebElement roleNameLocator;
+
+
+
 
 
 

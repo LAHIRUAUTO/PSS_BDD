@@ -42,6 +42,8 @@ public class Listener extends Utils implements ITestListener {
         }
         test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName() );
 
+        System.out.println("Test Case - " + result.getMethod().getMethodName() + " : SUCCESS");
+
     }
 
     @Override
@@ -56,6 +58,8 @@ public class Listener extends Utils implements ITestListener {
         }
         test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName() );
 
+        System.out.println("Test Case - " + result.getMethod().getMethodName() + " : FAILED");
+
     }
 
     @Override
@@ -63,6 +67,7 @@ public class Listener extends Utils implements ITestListener {
         test.log(Status.SKIP, "Test Skipped");
         test.skip(result.getThrowable());
 
+        System.out.println("Test Case - " + result.getMethod().getMethodName() + " : SKIPPED");
 
 
     }

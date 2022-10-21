@@ -15,8 +15,10 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         //System.out.println(userinfo.getText());
     }
 
-    public void clickToogleMenu () {
+    public void clickToogleMenu () throws InterruptedException {
+        explicitWaitElementVisible(tooglemenu);
         explicitWaitElementClickable(tooglemenu);
+        threadSleep();
         click(tooglemenu);
     }
 
@@ -45,19 +47,26 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
 
     }
 
-    public void enterRoleName (String rolename) {
-        //explicitWaitElementVisible(roleNameFieldLocator);
-        roleNameFieldLocator.sendKeys(rolename);
+    public void swithToDefault () {
+        driver.switchTo().defaultContent();
+
     }
 
-    public void clickSearchButton () {
-        explicitWaitElementVisible(searchButtonLocator);
-        searchButtonLocator.click();
+
+
+
+
+    public void clickFunctionUsage () {
+        explicitWaitElementVisible(functionalUsage);
+        click(functionalUsage);
     }
 
-    public void clickRoleName () {
-        explicitWaitElementVisible(roleNameLocator);
-        doubleClick(roleNameLocator);
+    public void mouseHoweGeography () {
+        mouseHover(geography);
+    }
+
+    public void clickAirport () {
+        airport.click();
     }
 
 

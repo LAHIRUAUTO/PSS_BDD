@@ -102,17 +102,17 @@
                     <div class="method-list-content passed suite-Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="ClickOnRole">ClickOnRole</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="LogInToThePSSAdmin(AVSYSLV, pass@LV0922)">LogInToThePSSAdmin(AVSYSLV, pass@LV0922)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="ClickOnToogleMenu">ClickOnToogleMenu</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="SearchForFunctionalUsage">SearchForFunctionalUsage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="LogInToThePSSAdmin(CRS)">LogInToThePSSAdmin(CRS)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="SearchForRoles(BSP)">SearchForRoles(BSP)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Test_Suite -->
@@ -135,30 +135,31 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ClickOnRole">
-                  </a> <!-- ClickOnRole -->
-                  <span class="method-name">ClickOnRole</span>
-                  <em>
-(Click on toogle menu test case)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ClickOnToogleMenu">
-                  </a> <!-- ClickOnToogleMenu -->
-                  <span class="method-name">ClickOnToogleMenu</span>
-                  <em>
-(Click on toogle menu test case)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="LogInToThePSSAdmin(CRS)">
-                  </a> <!-- LogInToThePSSAdmin(CRS) -->
+                  <a name="LogInToThePSSAdmin(AVSYSLV, pass@LV0922)">
+                  </a> <!-- LogInToThePSSAdmin(AVSYSLV, pass@LV0922) -->
                   <span class="method-name">LogInToThePSSAdmin</span>
-                  <span class="parameters">(CRS)</span>
+                  <span class="parameters">(AVSYSLV, pass@LV0922)</span>
                   <em>
 (PSS Log in test case)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchForFunctionalUsage">
+                  </a> <!-- SearchForFunctionalUsage -->
+                  <span class="method-name">SearchForFunctionalUsage</span>
+                  <em>
+(Click on toogle menu test case)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchForRoles(BSP)">
+                  </a> <!-- SearchForRoles(BSP) -->
+                  <span class="method-name">SearchForRoles</span>
+                  <span class="parameters">(BSP)</span>
+                  <em>
+(Click on toogle menu test case)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -173,7 +174,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; name=&quot;Test_Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;parameter name=&quot;Branch&quot; value=&quot;origin/master&quot;/&gt;
+  &lt;parameter name=&quot;Branch&quot; value=&quot;${branch}&quot;/&gt;
   &lt;parameter name=&quot;TestReportReceiverMailAddress&quot; value=&quot;vikasithasouth@gmail.com&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;parameter name=&quot;TestReportSenderMailAddress&quot; value=&quot;dcs.selenium.report@gmail.com&quot;/&gt;
@@ -190,8 +191,9 @@
       &lt;class name=&quot;PSSTestRunner.PSSTestRunner&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;LogInToThePSSAdmin&quot;/&gt;
-          &lt;include name=&quot;ClickOnToogleMenu&quot;/&gt;
-          &lt;include name=&quot;ClickOnRole&quot;/&gt;
+          &lt;include name=&quot;SearchForRoles&quot;/&gt;
+          &lt;include name=&quot;SearchForFunctionalUsage&quot;/&gt;
+          &lt;exclude name=&quot;LogOutFromThePSSAdmin&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- PSSTestRunner.PSSTestRunner --&gt;
     &lt;/classes&gt;
@@ -235,22 +237,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LogInToThePSSAdmin')
+data.setCell(0, 1, 'SearchForRoles')
 data.setCell(0, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(0, 3, 3842);
+data.setCell(0, 3, 22877);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ClickOnRole')
+data.setCell(1, 1, 'SearchForFunctionalUsage')
 data.setCell(1, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(1, 3, 684);
+data.setCell(1, 3, 10807);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'ClickOnToogleMenu')
+data.setCell(2, 1, 'LogInToThePSSAdmin')
 data.setCell(2, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(2, 3, 635);
+data.setCell(2, 3, 3271);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 36 seconds</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -290,39 +292,39 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">validateCurrentURL(https://flyegypt.avtra.com/admin/login, chrome)</span>
-                <span class="method-start">7537 ms</span>
+                <span class="method-start">4582 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">7578 ms</span>
+                <span class="method-start">4834 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LogInToThePSSAdmin(CRS)</span>
-                <span class="method-start">7583 ms</span>
+                <span class="method-name">LogInToThePSSAdmin(AVSYSLV, pass@LV0922)</span>
+                <span class="method-start">4839 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">11730 ms</span>
+                <span class="method-start">8860 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ClickOnToogleMenu</span>
-                <span class="method-start">11736 ms</span>
+                <span class="method-name">SearchForRoles(BSP)</span>
+                <span class="method-start">8864 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">12605 ms</span>
+                <span class="method-start">33112 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ClickOnRole</span>
-                <span class="method-start">12608 ms</span>
+                <span class="method-name">SearchForFunctionalUsage</span>
+                <span class="method-start">33116 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close</span>
-                <span class="method-start">13572 ms</span>
+                <span class="method-start">44087 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <span class="method-name">endSuite(origin/master, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsbruovggrocqxk...)</span>
-                <span class="method-start">14396 ms</span>
+                <span class="method-name">endSuite(${branch}, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsbruovggrocqxk, vi...)</span>
+                <span class="method-start">44490 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

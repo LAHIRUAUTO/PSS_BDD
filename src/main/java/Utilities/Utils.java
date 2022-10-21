@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 
 import java.io.*;
 import java.time.Duration;
@@ -46,6 +47,22 @@ public class Utils extends Browser_Base{
                 wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void threadSleep () throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
+    public void isEnabled (WebElement element) {
+        element.isEnabled();
+    }
+
+    public void isDisplayed (WebElement element) {
+        element.isDisplayed();
+    }
+
+    public void isSelected (WebElement element) {
+        element.isSelected();
+    }
+
 
     //On mouse Hover
     public void mouseHover(WebElement element) {
@@ -66,6 +83,7 @@ public class Utils extends Browser_Base{
 
 
 
+
     public void appPropertyAccess () throws IOException {
         //Load Property File
         File src = new File(System.getProperty("user.dir") + "/App.properties");
@@ -75,6 +93,25 @@ public class Utils extends Browser_Base{
         String setProjectPath = obj.getProperty("ProjectPath");
 
     }
+
+    public void checkTheNotificationMessage () {
+
+        try {
+            WebElement notificationMessage = driver.findElement(By.className("ui-pnotify-text"));
+            // check visibility with isDisplayed()
+            if (notificationMessage.isDisplayed()){
+                System.out.println("Notification message is displayed");
+                System.out.println(notificationMessage.getText());
+
+            }
+
+            } catch (Exception NoSuchElementException) {
+            //System.out.println("No Error Message Displayed");
+            //throw new NoSuchElementException("No Error Message Displayed");
+        }
+
+    }
+
     /*Get Screen shot start*/
     public String getScreenshot (String testCaseName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
