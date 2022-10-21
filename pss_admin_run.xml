@@ -14,8 +14,8 @@
     <parameter name="testerName" value="Lahiru Vikasitha"/>
     <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
-    <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/><!--vikasithasouth@gmail.com / ${reportReceiverMail}-->
-    <parameter name="browser" value="chrome"/><!--chrome / firefox / edge / chromeheadless / ${browserName}-->
+    <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com / ${reportReceiverMail}-->
+    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge / chromeheadless / ${browserName}-->
 
 
 
@@ -25,8 +25,8 @@
             <class name="PSSTestRunner.PSSTestRunner">
                 <methods>
                     <include name="LogInToThePSSAdmin"/>
-                    <exclude name="SearchForRoles"/>
-                    <exclude name="SearchForFunctionalUsage"/>
+                    <include name="SearchForRoles"/>
+                    <include name="SearchForFunctionalUsage"/>
                     <include name="SearchForAirports"/>
                     <exclude name="LogOutFromThePSSAdmin"/>
                 </methods>
