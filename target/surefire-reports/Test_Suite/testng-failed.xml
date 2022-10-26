@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Test_Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
+  <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
+  <parameter name="Module" value="PSS Admin Regression Test Result on "/>
+  <parameter name="title" value="CRS"/>
+  <parameter name="branch" value="origin/master"/>
+  <parameter name="url" value="https://flyegypt.avtra.com/admin/login"/>
+  <parameter name="testerName" value="Lahiru Vikasitha"/>
+  <listeners>
+    <listener class-name="Utilities.Listener"/>
+  </listeners>
+  <test thread-count="1" name="Sub_Suite_1(failed)" verbose="0">
+    <classes>
+      <class name="PSSTestRunner.PSSTestRunner">
+        <methods>
+          <include name="searchForCity" invocation-numbers="0"/>
+          <include name="searchForAirportsDST"/>
+          <include name="close"/>
+          <include name="searchForCountry" invocation-numbers="0"/>
+          <include name="endSuite"/>
+          <include name="implicitwait"/>
+          <include name="logInToThePSSAdmin"/>
+          <include name="addAirportsDST"/>
+          <include name="validateCurrentURL"/>
+          <include name="addAirports"/>
+          <include name="searchForAirports" invocation-numbers="0"/>
+          <include name="Intialize"/>
+        </methods>
+      </class> <!-- PSSTestRunner.PSSTestRunner -->
+    </classes>
+  </test> <!-- Sub_Suite_1(failed) -->
+</suite> <!-- Failed suite [Test_Suite] -->

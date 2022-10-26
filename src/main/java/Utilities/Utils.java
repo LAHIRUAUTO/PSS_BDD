@@ -216,14 +216,14 @@ public class Utils extends Browser_Base{
     //Capture Screen Shots ends*/
 
 
-    @Parameters ({"branch", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
+    @Parameters ({"build", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
     @AfterSuite
-    public static void endSuite(String branch, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
+    public static void endSuite(String build, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now));
         ZipUtils.creatZipFile();
-        TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ branch, "Dear Mr Vikasitha,");
+        TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ build, "Dear Mr Vikasitha,");
     }
     //1Slite0614
 

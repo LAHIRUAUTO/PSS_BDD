@@ -7,7 +7,7 @@
     </listeners>
 
     <!--Globle Parameters for All Browsers -->
-    <parameter name="branch" value="${branch}"/><!--PSS_Release_21.2 Patch-47-->
+    <parameter name="build" value="${build}"/><!--PSS_Release_21.2 Patch-47-->
     <parameter name="Module" value="PSS Admin Regression Test Result on "/>
     <parameter name="url" value="${TargetURL}"/> <!--${TargetURL} / https://flyegypt.avtra.com/admin/login-->
     <parameter name="title" value="CRS"/>
