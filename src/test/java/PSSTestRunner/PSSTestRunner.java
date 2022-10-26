@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class PSSTestRunner extends Utils {
 
     @Parameters({"url", "browser"})
@@ -152,7 +154,7 @@ public class PSSTestRunner extends Utils {
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
-    public void searchForCity(String countryName) throws InterruptedException {
+    public void searchForCity(String countryName) throws InterruptedException, AWTException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
@@ -164,6 +166,26 @@ public class PSSTestRunner extends Utils {
         newadmingeographypage.selectcountry(countryName);
         newadmingeographypage.clickCitySearchButtonLocator();
         newadmingeographypage.clickCityLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+
+
+    }
+
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForCountry(String countrycode) throws InterruptedException, AWTException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickCountry ();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickCountryLocator(countrycode);
+        newadmingeographypage.clickCountrySearchButtonLocator();
+        newadmingeographypage.clickCountryRecordLocator();
         newadminhomepage.swithToDefault();
         checkTheNotificationMessage();
         driver.navigate().refresh();

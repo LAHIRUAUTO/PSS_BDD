@@ -2,6 +2,7 @@ package Utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -10,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.*;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -81,6 +84,27 @@ public class Utils extends Browser_Base{
         actions.doubleClick(element).perform();
     }
 
+    public void rightClick (WebElement element) {
+        Actions actions = new Actions(driver);
+        actions.contextClick(element).perform();
+    }
+
+    public void copyText () throws AWTException {
+        Robot myRobot = new Robot();
+        myRobot.keyPress(KeyEvent.VK_CONTROL);
+        myRobot.keyPress(KeyEvent.VK_C);
+        myRobot.keyRelease(KeyEvent.VK_CONTROL);
+        myRobot.keyRelease(KeyEvent.VK_C);
+    }
+    public void doubleClickOnCoordinates () throws AWTException {
+
+        Actions newact = new Actions(driver);
+        //newact.moveByOffset();
+    }
+
+
+
+
 
 
 
@@ -102,6 +126,7 @@ public class Utils extends Browser_Base{
             if (notificationMessage.isDisplayed()){
                 System.out.println("Notification message is displayed");
                 System.out.println(notificationMessage.getText());
+                getScreenshot(notificationMessage.getText());
 
             }
 

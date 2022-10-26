@@ -1,6 +1,10 @@
 package PSS_Pages.PSS_Geography_Page;
 
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import javax.swing.*;
 
 public class AdminGeographyPageMethods extends AdminGeographyPageObjects{
 
@@ -47,4 +51,21 @@ public class AdminGeographyPageMethods extends AdminGeographyPageObjects{
         explicitWaitElementVisible(cityLocator);
         doubleClick(cityLocator);
     }
+
+    public void clickCountryLocator (String countrycode) {
+        explicitWaitElementVisible(countryCodeLocator);
+        countryCodeLocator.sendKeys(countrycode);
+    }
+
+    public void clickCountrySearchButtonLocator () {
+        explicitWaitElementClickable(countrySearchButtonLocator);
+        countrySearchButtonLocator.click();
+    }
+
+    public void clickCountryRecordLocator () {
+        explicitWaitElementClickable(countryRecordLocator);
+        doubleClick(countryRecordLocator);
+    }
+
+
 }

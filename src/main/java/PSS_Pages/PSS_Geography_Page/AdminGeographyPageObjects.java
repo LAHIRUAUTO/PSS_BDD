@@ -30,7 +30,23 @@ public class AdminGeographyPageObjects extends Utils {
     @FindBy (xpath = "//button[@id='btnSearch']")
     WebElement searchCityButtonLocator;
 
+
+
     @FindBy (xpath = "/html[1]/body[1]/section[1]/section[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/table[1]/tbody[1]/tr[2]/td[2]")
     WebElement cityLocator;
+
+
+
+
+    @FindBy (id = "countryCode")
+    WebElement countryCodeLocator;
+
+    @FindBy (xpath = "//button[@id='btnSearch']")
+    WebElement countrySearchButtonLocator;
+
+    @FindBy (xpath = "//td[normalize-space()='EG']")
+    WebElement countryRecordLocator;
+
+
 
 }

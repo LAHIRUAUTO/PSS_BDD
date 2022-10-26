@@ -67,6 +67,9 @@ public class AdminHomePageObjects extends Utils {
     WebElement city;
 
 
+    @FindBy (xpath = "//a[@class='country']")
+    WebElement country;
+
 
 
 

@@ -1,7 +1,9 @@
 package Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,11 +23,6 @@ public class Browser_Base {
     @Parameters({"browser", "url"})
     @BeforeTest
     public static void Intialize(String browser, String url) throws Exception {
-
-        //Load Property File
-        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir")+"/App.properties");
-        Properties obj = new Properties();
-        obj.load(objfile);
 
         switch (browser) {
             case "chrome" :
@@ -57,6 +54,8 @@ public class Browser_Base {
         }
         driver.get(url);
         driver.manage().window().maximize();
+        //driver.manage().window().setSize(new Dimension (1024, 768));
+        //driver.manage().window().setPosition(new Point(100, 300));
 
 
     }

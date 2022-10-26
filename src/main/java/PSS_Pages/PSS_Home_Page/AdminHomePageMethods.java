@@ -78,6 +78,10 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         city.click();
     }
 
+    public void clickCountry () {
+        country.click();
+    }
+
 
     public void clickLogoutButton () {
 
