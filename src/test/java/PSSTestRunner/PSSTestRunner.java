@@ -8,13 +8,13 @@ import PSS_Pages.PSS_Security_Page.AdminSecurityPageMethods;
 import Utilities.TestNGDataProvider;
 import Utilities.Utils;
 import com.sun.net.httpserver.Authenticator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.awt.*;
 
 public class PSSTestRunner extends Utils {
 
@@ -154,7 +154,7 @@ public class PSSTestRunner extends Utils {
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
-    public void searchForCity(String countryName) throws InterruptedException, AWTException {
+    public void searchForCity(String countryName) throws InterruptedException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
@@ -174,7 +174,7 @@ public class PSSTestRunner extends Utils {
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
-    public void searchForCountry(String countrycode) throws InterruptedException, AWTException {
+    public void searchForCountry(String countrycode) throws InterruptedException {
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
         AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
@@ -193,7 +193,61 @@ public class PSSTestRunner extends Utils {
 
     }
 
-    @Test (dependsOnMethods = {"logInToThePSSAdmin"}, retryAnalyzer = Authenticator.Retry.class, description = "PSS Log out test case")
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForSalesTerritory(String territorycode) throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickTerritory ();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickTerritoryLocator(territorycode);
+        newadmingeographypage.clickTerritorySearchButtonLocator();
+        newadmingeographypage.clickTerritoryRecordLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+    }
+
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForStation( String stationcode) throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickStation ();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.selectStationCode(stationcode);
+        newadmingeographypage.clickStationSearchButtonLocator();
+        newadmingeographypage.clickStationRecordLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+    }
+
+    @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
+    public void searchForNationality( String countryCode) throws InterruptedException {
+
+        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+        newadminhomepage.clickToogleMenu();
+        newadminhomepage.mouseHoweMaintenance();
+        newadminhomepage.mouseHoweGeography();
+        newadminhomepage.clickNationality ();
+        newadminhomepage.swithToIframe();
+        newadmingeographypage.clickNationalityLocator(countryCode);
+        newadmingeographypage.clickNationalitySearchButtonLocator();
+        newadmingeographypage.clickNationalityRecordLocator();
+        newadminhomepage.swithToDefault();
+        checkTheNotificationMessage();
+        driver.navigate().refresh();
+    }
+
+    @Test (dependsOnMethods = {"logInToThePSSAdmin"}, retryAnalyzer = Authenticator.Retry.class)
     public void logOutFromThePSSAdmin(){
 
         AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);

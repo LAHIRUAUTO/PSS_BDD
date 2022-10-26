@@ -82,6 +82,19 @@ public class AdminHomePageMethods extends AdminHomePageObjects{
         country.click();
     }
 
+    public void clickTerritory () {
+        territory.click();
+    }
+
+    public void clickStation () {
+        station.click();
+    }
+
+    public void clickNationality () {
+        nationality.click();
+    }
+
+
 
     public void clickLogoutButton () {
 

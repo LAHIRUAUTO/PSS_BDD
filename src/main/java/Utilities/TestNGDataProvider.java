@@ -12,12 +12,8 @@ public class TestNGDataProvider extends Utils {
     String FilePath = "/home/user/Desktop/Udemy/Test/Test Data/PSStestdata.xls";
     FileInputStream fs = new FileInputStream(FilePath);
     Workbook wb = Workbook.getWorkbook(fs);
-    Sheet DataFeed  = wb.getSheet("DataFeed");
-    Sheet DataFeed2  = wb.getSheet("DataFeed2");
-
     Sheet PSSAdminLogginSh = wb.getSheet("PssAdminLoggin");
     Sheet PSSAdminHomaPageSh = wb.getSheet("PssAdminHomePage");
-
     public TestNGDataProvider() throws IOException, BiffException {
 
 
@@ -30,7 +26,7 @@ public class TestNGDataProvider extends Utils {
         if (methodName.getName().equalsIgnoreCase("LogInToThePSSAdmin")) {
 
             return new Object[][] {
-                    {PSSAdminLogginSh.getCell("A2").getContents(),PSSAdminLogginSh.getCell("B2").getContents()}
+                    {PSSAdminLogginSh.getCell("A3").getContents(),PSSAdminLogginSh.getCell("B3").getContents()}
             };
 
         } else if (methodName.getName().equalsIgnoreCase("SearchForRoles")) {
@@ -54,6 +50,24 @@ public class TestNGDataProvider extends Utils {
         } else if (methodName.getName().equalsIgnoreCase("searchForCountry")) {
             return new Object[][] {
                     {PSSAdminHomaPageSh.getCell("A5").getContents()}
+
+            };
+
+        } else if (methodName.getName().equalsIgnoreCase("searchForSalesTerritory")) {
+            return new Object[][] {
+                    {PSSAdminHomaPageSh.getCell("A6").getContents()}
+
+            };
+
+        } else if (methodName.getName().equalsIgnoreCase("searchForStation")) {
+            return new Object[][] {
+                    {PSSAdminHomaPageSh.getCell("A6").getContents()}
+
+            };
+
+        } else if (methodName.getName().equalsIgnoreCase("searchForNationality")) {
+            return new Object[][] {
+                    {PSSAdminHomaPageSh.getCell("A4").getContents()}
 
             };
 

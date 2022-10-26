@@ -2,14 +2,9 @@ package Utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.annotations.*;
-import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,7 +20,7 @@ public class Utils extends Browser_Base{
     //Implicit Wait start
     @BeforeMethod
     public static void implicitwait () {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
     //Implicit Wait end
 
@@ -102,9 +97,10 @@ public class Utils extends Browser_Base{
         //newact.moveByOffset();
     }
 
-
-
-
+    public void selectByTextVisible (WebElement stationCodeLocator, String stationCode) {
+        Select selectstationCode = new Select(stationCodeLocator);
+        selectstationCode.selectByVisibleText(stationCode);
+    }
 
 
 
@@ -227,10 +223,7 @@ public class Utils extends Browser_Base{
     }
     //1Slite0614
 
-    @DataProvider
-    public Object[][] getData () {
-        return new Object [][] {{},{}};
-    }
+
 
 
 

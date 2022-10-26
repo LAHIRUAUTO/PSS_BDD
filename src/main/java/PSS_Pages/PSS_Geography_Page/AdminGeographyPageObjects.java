@@ -1,8 +1,11 @@
 package PSS_Pages.PSS_Geography_Page;
 
 import Utilities.Utils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class AdminGeographyPageObjects extends Utils {
 
@@ -44,9 +47,38 @@ public class AdminGeographyPageObjects extends Utils {
     @FindBy (xpath = "//button[@id='btnSearch']")
     WebElement countrySearchButtonLocator;
 
+
+
     @FindBy (xpath = "//td[normalize-space()='EG']")
     WebElement countryRecordLocator;
 
+    @FindBy (xpath = "//input[@id='salesTerritoryCode']")
+    WebElement territoryCodeLocator;
+
+    @FindBy (xpath = "//button[@id='btnSearch']")
+    WebElement territorySearchButtonLocator;
+
+    @FindBy (xpath = "//td[normalize-space()='CAIRO']")
+    WebElement territoryRecordLocator;
+
+    @FindBy (id = "sltStationCity")
+    @CacheLookup
+    WebElement stationCodeLocator;
+
+    @FindBy (xpath = "//span[@class='spn-action search-btn']")
+    WebElement stationSearchButtonLocator;
+
+    @FindBy (xpath = "//td[normalize-space()='CAI']")
+    WebElement stationRecordLocator;
+
+    @FindBy (xpath = "//input[@id='countryName']")
+    WebElement nationalityCodeLocator;
+
+    @FindBy (xpath = "//button[@id='btnSearch']")
+    WebElement nationalitySearchButtonLocator;
+
+    @FindBy (xpath = "//td[normalize-space()='Egypt']")
+    WebElement nationalityRecordLocator;
 
 
 }

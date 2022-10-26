@@ -1,10 +1,6 @@
 package PSS_Pages.PSS_Geography_Page;
 
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.*;
 
 public class AdminGeographyPageMethods extends AdminGeographyPageObjects{
 
@@ -65,6 +61,50 @@ public class AdminGeographyPageMethods extends AdminGeographyPageObjects{
     public void clickCountryRecordLocator () {
         explicitWaitElementClickable(countryRecordLocator);
         doubleClick(countryRecordLocator);
+    }
+
+    public void clickTerritoryLocator (String stationcode) {
+        explicitWaitElementVisible(territoryCodeLocator);
+        territoryCodeLocator.sendKeys(stationcode);
+    }
+
+    public void clickTerritorySearchButtonLocator () {
+        explicitWaitElementClickable(territorySearchButtonLocator);
+        territorySearchButtonLocator.click();
+    }
+
+    public void clickTerritoryRecordLocator () {
+        explicitWaitElementClickable(territoryRecordLocator);
+        doubleClick(territoryRecordLocator);
+    }
+
+    public void selectStationCode(String stationCode) {
+        selectByTextVisible(stationCodeLocator,stationCode );
+    }
+
+    public void clickStationSearchButtonLocator () {
+        explicitWaitElementClickable(stationSearchButtonLocator);
+        stationSearchButtonLocator.click();
+    }
+
+    public void clickStationRecordLocator () {
+        explicitWaitElementClickable(stationRecordLocator);
+        doubleClick(stationRecordLocator);
+    }
+
+    public void clickNationalityLocator (String countryCode) {
+        explicitWaitElementVisible(nationalityCodeLocator);
+        nationalityCodeLocator.sendKeys(countryCode);
+    }
+
+    public void clickNationalitySearchButtonLocator () {
+        explicitWaitElementClickable(nationalitySearchButtonLocator);
+        nationalitySearchButtonLocator.click();
+    }
+
+    public void clickNationalityRecordLocator () {
+        explicitWaitElementClickable(nationalityRecordLocator);
+        doubleClick(nationalityRecordLocator);
     }
 
 

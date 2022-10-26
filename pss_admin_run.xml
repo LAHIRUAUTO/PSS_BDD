@@ -33,6 +33,9 @@
                     <include name="addAirportsDST"/>
                     <include name="searchForCity"/>
                     <include name="searchForCountry"/>
+                    <include name="searchForSalesTerritory"/>
+                    <include name="searchForStation"/>
+                    <include name="searchForNationality"/>
                     <exclude name="logOutFromThePSSAdmin"/>
                 </methods>
             </class>
