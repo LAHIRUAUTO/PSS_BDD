@@ -14,8 +14,8 @@
     <parameter name="testerName" value="Lahiru Vikasitha"/>
     <parameter name="TestReportSenderMailAddress" value="dcs.selenium.report@gmail.com"/>
     <parameter name="TestReportSenderMailPassword" value="lmsbruovggrocqxk"/>
-    <parameter name="TestReportReceiverMailAddress" value="vikasithasouth@gmail.com"/><!--vikasithasouth@gmail.com / ${reportReceiverMail}-->
-    <parameter name="browser" value="chrome"/><!--chrome / firefox / edge / chromeheadless / ${browserName}-->
+    <parameter name="TestReportReceiverMailAddress" value="${reportReceiverMail}"/><!--vikasithasouth@gmail.com / ${reportReceiverMail}-->
+    <parameter name="browser" value="${browserName}"/><!--chrome / firefox / edge / chromeheadless / ${browserName}-->
 
 
 
@@ -25,17 +25,17 @@
             <class name="PSSTestRunner.PSSTestRunner">
                 <methods>
                     <include name="logInToThePSSAdmin"/>
-                    <exclude name="searchForRoles"/>
-                    <exclude name="searchForFunctionalUsage"/>
-                    <exclude name="searchForAirports"/>
-                    <exclude name="addAirports"/>
-                    <exclude name="searchForAirportsDST"/>
-                    <exclude name="addAirportsDST"/>
-                    <exclude name="searchForCity"/>
-                    <exclude name="searchForCountry"/>
-                    <exclude name="searchForSalesTerritory"/>
-                    <exclude name="searchForStation"/>
-                    <exclude name="searchForNationality"/>
+                    <include name="searchForRoles"/>
+                    <include name="searchForFunctionalUsage"/>
+                    <include name="searchForAirports"/>
+                    <include name="addAirports"/>
+                    <include name="searchForAirportsDST"/>
+                    <include name="addAirportsDST"/>
+                    <include name="searchForCity"/>
+                    <include name="searchForCountry"/>
+                    <include name="searchForSalesTerritory"/>
+                    <include name="searchForStation"/>
+                    <include name="searchForNationality"/>
                     <exclude name="logOutFromThePSSAdmin"/>
                 </methods>
             </class>
