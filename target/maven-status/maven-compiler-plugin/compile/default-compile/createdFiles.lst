@@ -5,6 +5,7 @@ PSS_Pages/PSS_Home_Page/AdminHomePageObjects.class
 Utilities/TestNGDataProvider.class
 Utilities/Browser_Base.class
 PSS_Pages/PSS_Security_Page/AdminSecurityPageMethods.class
+Utilities/DatabaseConnector.class
 PSS_Pages/PSS_Security_Page/AdminSecurityPageObjects.class
 Utilities/Utils.class
 PSS_Pages/PSS_Geography_Page/AdminGeographyPageObjects.class

@@ -26,7 +26,8 @@ public class TestNGDataProvider extends Utils {
         if (methodName.getName().equalsIgnoreCase("LogInToThePSSAdmin")) {
 
             return new Object[][] {
-                    {PSSAdminLogginSh.getCell("A3").getContents(),PSSAdminLogginSh.getCell("B3").getContents()}
+                    {DatabaseConnector.getuserName(),PSSAdminLogginSh.getCell("B3").getContents()},
+
             };
 
         } else if (methodName.getName().equalsIgnoreCase("SearchForRoles")) {
