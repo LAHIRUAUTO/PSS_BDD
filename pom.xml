@@ -267,7 +267,7 @@
     <profiles>
         <profile>
             <!--suppress UnresolvedMavenProperty -->
-            <id>${test_profile}</id>
+            <id>regression</id>
             <build>
             <pluginManagement>
             <plugins>

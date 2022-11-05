@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Test_Suite" class="navigator-link ">
-                    <span>pss_admin_run.xml</span>
+                    <span>devtest.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -136,15 +136,15 @@
         </div> <!-- panel Test_Suite -->
         <div panel-name="test-xml-Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/user/Desktop/Udemy/Test/pss_admin_run.xml</span>
+            <span class="header-content">/home/user/Desktop/Udemy/Test/devtest.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; name=&quot;Test_Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;parameter name=&quot;build&quot; value=&quot;${build}&quot;/&gt;
-  &lt;parameter name=&quot;TestReportReceiverMailAddress&quot; value=&quot;vikasithasouth@gmail.com&quot;/&gt;
+  &lt;parameter name=&quot;build&quot; value=&quot;PSS_Release_21.2 Patch-47&quot;/&gt;
+  &lt;parameter name=&quot;TestReportReceiverMailAddress&quot; value=&quot;avtratestmails@gmail.com&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;parameter name=&quot;TestReportSenderMailAddress&quot; value=&quot;dcs.selenium.report@gmail.com&quot;/&gt;
   &lt;parameter name=&quot;TestReportSenderMailPassword&quot; value=&quot;lmsbruovggrocqxk&quot;/&gt;
@@ -160,18 +160,6 @@
       &lt;class name=&quot;PSSTestRunner.PSSTestRunner&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;logInToThePSSAdmin&quot;/&gt;
-          &lt;exclude name=&quot;searchForRoles&quot;/&gt;
-          &lt;exclude name=&quot;searchForFunctionalUsage&quot;/&gt;
-          &lt;exclude name=&quot;searchForAirports&quot;/&gt;
-          &lt;exclude name=&quot;addAirports&quot;/&gt;
-          &lt;exclude name=&quot;searchForAirportsDST&quot;/&gt;
-          &lt;exclude name=&quot;addAirportsDST&quot;/&gt;
-          &lt;exclude name=&quot;searchForCity&quot;/&gt;
-          &lt;exclude name=&quot;searchForCountry&quot;/&gt;
-          &lt;exclude name=&quot;searchForSalesTerritory&quot;/&gt;
-          &lt;exclude name=&quot;searchForStation&quot;/&gt;
-          &lt;exclude name=&quot;searchForNationality&quot;/&gt;
-          &lt;exclude name=&quot;logOutFromThePSSAdmin&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- PSSTestRunner.PSSTestRunner --&gt;
     &lt;/classes&gt;
@@ -217,7 +205,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'logInToThePSSAdmin')
 data.setCell(0, 2, 'PSSTestRunner.PSSTestRunner')
-data.setCell(0, 3, 3253);
+data.setCell(0, 3, 3974);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
@@ -284,23 +272,23 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">validateCurrentURL(https://flyegypt.avtra.com/admin/login, chrome)</span>
-                <span class="method-start">3773 ms</span>
+                <span class="method-start">6244 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">implicitwait</span>
-                <span class="method-start">5647 ms</span>
+                <span class="method-start">8465 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">logInToThePSSAdmin(AVSYSLV, pass@LV0922)</span>
-                <span class="method-start">5651 ms</span>
+                <span class="method-start">8470 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close</span>
-                <span class="method-start">9560 ms</span>
+                <span class="method-start">13196 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
-                <span class="method-name">endSuite(${build}, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsbruovggrocqxk, vik...)</span>
-                <span class="method-start">9946 ms</span>
+                <span class="method-name">endSuite(PSS_Release_21.2 Patch-47, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsb...)</span>
+                <span class="method-start">13947 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
