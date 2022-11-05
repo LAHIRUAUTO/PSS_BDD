@@ -12,16 +12,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class PSSTestRunner extends Utils {
 
     @Parameters({"url", "browser"})
     @BeforeTest
     public void validateCurrentURL (String url, String browser){
-
+        SoftAssert softassert = new SoftAssert();
+        softassert.assertTrue(driver.getCurrentUrl().equalsIgnoreCase(url), "Soft Assert Hit");
+        softassert.assertAll();
         Assert.assertTrue(driver.getCurrentUrl().equalsIgnoreCase(url), "Incorrect URL");
     }
 

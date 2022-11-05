@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Test_Suite" class="hide-methods passed suite-Test_Suite"> (hide)</a> <!-- hide-methods passed suite-Test_Suite -->
+                      <a href="#" panel-name="suite-Test_Suite" class="show-methods passed suite-Test_Suite"> (show)</a> <!-- show-methods passed suite-Test_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Test_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_Suite" title="PSSTestRunner.PSSTestRunner" class="method navigator-link" hash-for-method="logInToThePSSAdmin(AVSYSLV, pass@LV0922)">logInToThePSSAdmin(AVSYSLV, pass@LV0922)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Test_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -103,6 +117,22 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_Suite" class="panel Test_Suite">
+          <div class="suite-Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">PSSTestRunner.PSSTestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="logInToThePSSAdmin(AVSYSLV, pass@LV0922)">
+                  </a> <!-- logInToThePSSAdmin(AVSYSLV, pass@LV0922) -->
+                  <span class="method-name">logInToThePSSAdmin</span>
+                  <span class="parameters">(AVSYSLV, pass@LV0922)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test_Suite-class-passed -->
         </div> <!-- panel Test_Suite -->
         <div panel-name="test-xml-Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -125,11 +155,11 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;Utilities.Listener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;1&quot; name=&quot;Sub_Suite_1&quot; verbose=&quot;2&quot;&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Sub_Suite_1&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;PSSTestRunner.PSSTestRunner&quot;&gt;
         &lt;methods&gt;
-          &lt;exclude name=&quot;logInToThePSSAdmin&quot;/&gt;
+          &lt;include name=&quot;logInToThePSSAdmin&quot;/&gt;
           &lt;exclude name=&quot;searchForRoles&quot;/&gt;
           &lt;exclude name=&quot;searchForFunctionalUsage&quot;/&gt;
           &lt;exclude name=&quot;searchForAirports&quot;/&gt;
@@ -183,11 +213,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'logInToThePSSAdmin')
+data.setCell(0, 2, 'PSSTestRunner.PSSTestRunner')
+data.setCell(0, 3, 3253);
 window.suiteTableData['Test_Suite']= { tableData: data, tableDiv: 'times-div-Test_Suite'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Test_Suite">
               </div> <!-- times-div-Test_Suite -->
             </div> <!-- times-div -->
@@ -202,7 +237,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Test_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">13 ignored methods</span>
+            <span class="header-content">12 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -216,21 +251,19 @@ return data;
                 <br/>
                 <span class="ignored-method-name">searchForAirportsDST</span>
                 <br/>
+                <span class="ignored-method-name">searchForCountry</span>
+                <br/>
+                <span class="ignored-method-name">searchForNationality</span>
+                <br/>
                 <span class="ignored-method-name">addAirportsDST</span>
                 <br/>
                 <span class="ignored-method-name">searchForSalesTerritory</span>
-                <br/>
-                <span class="ignored-method-name">logInToThePSSAdmin</span>
                 <br/>
                 <span class="ignored-method-name">logOutFromThePSSAdmin</span>
                 <br/>
                 <span class="ignored-method-name">searchForAirports</span>
                 <br/>
                 <span class="ignored-method-name">addAirports</span>
-                <br/>
-                <span class="ignored-method-name">searchForCountry</span>
-                <br/>
-                <span class="ignored-method-name">searchForNationality</span>
                 <br/>
                 <span class="ignored-method-name">searchForStation</span>
                 <br/>
@@ -251,15 +284,23 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">validateCurrentURL(https://flyegypt.avtra.com/admin/login, chrome)</span>
-                <span class="method-start">4515 ms</span>
+                <span class="method-start">3773 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">implicitwait</span>
+                <span class="method-start">5647 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">logInToThePSSAdmin(AVSYSLV, pass@LV0922)</span>
+                <span class="method-start">5651 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">close</span>
-                <span class="method-start">4555 ms</span>
+                <span class="method-start">9560 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">endSuite(${build}, PSS Admin Regression Test Result on , dcs.selenium.report@gmail.com, lmsbruovggrocqxk, vik...)</span>
-                <span class="method-start">4951 ms</span>
+                <span class="method-start">9946 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

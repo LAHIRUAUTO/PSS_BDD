@@ -19,7 +19,7 @@
 
 
 
-    <test verbose="2" preserve-order="true" name="Sub_Suite_1">
+    <test name="Sub_Suite_1">
 
         <classes>
             <class name="PSSTestRunner.PSSTestRunner">

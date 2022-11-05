@@ -42,6 +42,7 @@ public class Listener extends Utils implements ITestListener {
         }
         test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName() );
 
+
         System.out.println("Test Case - " + result.getMethod().getMethodName() + " : SUCCESS");
 
     }
