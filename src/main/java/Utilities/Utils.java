@@ -9,9 +9,11 @@ import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Properties;
 
 
@@ -120,9 +122,11 @@ public class Utils extends Browser_Base{
             WebElement notificationMessage = driver.findElement(By.className("ui-pnotify-text"));
             // check visibility with isDisplayed()
             if (notificationMessage.isDisplayed()){
+                Date currentDate = new Date();
+                SimpleDateFormat dateFormat = new SimpleDateFormat();
                 System.out.println("Notification message is displayed");
                 System.out.println(notificationMessage.getText());
-                getScreenshot(notificationMessage.getText());
+                getScreenshot(notificationMessage.getText() + " " + dateFormat.format(currentDate));
 
             }
 
