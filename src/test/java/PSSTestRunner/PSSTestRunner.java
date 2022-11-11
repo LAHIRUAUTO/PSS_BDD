@@ -40,6 +40,7 @@ public class PSSTestRunner extends Utils {
             newadminloginpage.enterPassword(password);
             newadminloginpage.clickLoginbutton();
             newadminhomepage.mouseHoweDashBooard();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -63,6 +64,7 @@ public class PSSTestRunner extends Utils {
             newadminrolepage.clickRoleName();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -85,6 +87,7 @@ public class PSSTestRunner extends Utils {
             newadminsecuritypage.clickFunctionalSearchButton();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -108,6 +111,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickAirportLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -129,6 +133,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickAddAirportDSTButtonLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -150,6 +155,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickAirportDSTSearchButtonLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -171,6 +177,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickAirportDSTSearchButtonLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -195,6 +202,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickCityLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -218,6 +226,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickCountryRecordLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -241,6 +250,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickTerritoryRecordLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -263,6 +273,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickStationRecordLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
@@ -285,6 +296,7 @@ public class PSSTestRunner extends Utils {
             newadmingeographypage.clickNationalityRecordLocator();
             newadminhomepage.swithToDefault();
             checkTheNotificationMessage();
+            driver.navigate().refresh();
         }
         catch (Exception e) {
             driver.navigate().refresh();
