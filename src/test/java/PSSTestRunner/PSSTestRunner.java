@@ -33,126 +33,148 @@ public class PSSTestRunner extends Utils {
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class)
     public void logInToThePSSAdmin(String username, String password){
 
-        AdminLoginPageMethods newadminloginpage = PageFactory.initElements(driver, AdminLoginPageMethods.class);
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        newadminloginpage.enterUsername(username);
-        newadminloginpage.enterPassword(password);
-        newadminloginpage.clickLoginbutton();
-        newadminhomepage.mouseHoweDashBooard();
-        driver.navigate().refresh();
-
+        try {
+            AdminLoginPageMethods newadminloginpage = PageFactory.initElements(driver, AdminLoginPageMethods.class);
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            newadminloginpage.enterUsername(username);
+            newadminloginpage.enterPassword(password);
+            newadminloginpage.clickLoginbutton();
+            newadminhomepage.mouseHoweDashBooard();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
     }
 
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForRoles(String rolename) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminSecurityPageMethods newadminrolepage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweSecurity();
-        newadminhomepage.clickrole();
-        newadminhomepage.swithToIframe();
-        newadminrolepage.enterRoleName(rolename);
-        newadminrolepage.clickRoleSearchButton();
-        newadminrolepage.clickRoleName();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminSecurityPageMethods newadminrolepage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweSecurity();
+            newadminhomepage.clickrole();
+            newadminhomepage.swithToIframe();
+            newadminrolepage.enterRoleName(rolename);
+            newadminrolepage.clickRoleSearchButton();
+            newadminrolepage.clickRoleName();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForFunctionalUsage() throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminSecurityPageMethods newadminsecuritypage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweSecurity();
-        newadminhomepage.clickFunctionUsage();
-        newadminhomepage.swithToIframe();
-        newadminsecuritypage.clickUnAssignedFunctionRadioButton();
-        newadminsecuritypage.clickFunctionalSearchButton();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminSecurityPageMethods newadminsecuritypage = PageFactory.initElements(driver, AdminSecurityPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweSecurity();
+            newadminhomepage.clickFunctionUsage();
+            newadminhomepage.swithToIframe();
+            newadminsecuritypage.clickUnAssignedFunctionRadioButton();
+            newadminsecuritypage.clickFunctionalSearchButton();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForAirports(String airportCode) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickAirport();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickAirportCodeFieldLocator(airportCode);
-        newadmingeographypage.clickAirportSearchButtonLocator();
-        newadmingeographypage.clickAirportLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickAirport();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickAirportCodeFieldLocator(airportCode);
+            newadmingeographypage.clickAirportSearchButtonLocator();
+            newadmingeographypage.clickAirportLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test ( dependsOnMethods = {"logInToThePSSAdmin"})
     public void addAirports () throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickAirport();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickAddAirportDSTButtonLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickAirport();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickAddAirportDSTButtonLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForAirportsDST() throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickAirportDST();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickAirportDSTSearchButtonLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickAirportDST();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickAirportDSTSearchButtonLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dependsOnMethods = {"logInToThePSSAdmin"})
     public void addAirportsDST () throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickAirportDST();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickAirportDSTSearchButtonLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickAirportDST();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickAirportDSTSearchButtonLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
 
     }
@@ -160,103 +182,126 @@ public class PSSTestRunner extends Utils {
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForCity(String countryName) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickCity  ();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.selectcountry(countryName);
-        newadmingeographypage.clickCitySearchButtonLocator();
-        newadmingeographypage.clickCityLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickCity();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.selectcountry(countryName);
+            newadmingeographypage.clickCitySearchButtonLocator();
+            newadmingeographypage.clickCityLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForCountry(String countrycode) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickCountry ();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickCountryLocator(countrycode);
-        newadmingeographypage.clickCountrySearchButtonLocator();
-        newadmingeographypage.clickCountryRecordLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
-
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickCountry();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickCountryLocator(countrycode);
+            newadmingeographypage.clickCountrySearchButtonLocator();
+            newadmingeographypage.clickCountryRecordLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
 
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForSalesTerritory(String territorycode) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickTerritory ();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickTerritoryLocator(territorycode);
-        newadmingeographypage.clickTerritorySearchButtonLocator();
-        newadmingeographypage.clickTerritoryRecordLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickTerritory();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickTerritoryLocator(territorycode);
+            newadmingeographypage.clickTerritorySearchButtonLocator();
+            newadmingeographypage.clickTerritoryRecordLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForStation( String stationcode) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickStation ();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.selectStationCode(stationcode);
-        newadmingeographypage.clickStationSearchButtonLocator();
-        newadmingeographypage.clickStationRecordLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickStation();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.selectStationCode(stationcode);
+            newadmingeographypage.clickStationSearchButtonLocator();
+            newadmingeographypage.clickStationRecordLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
     }
 
     @Test (dataProvider="SearchProvider",dataProviderClass= TestNGDataProvider.class, dependsOnMethods = {"logInToThePSSAdmin"})
     public void searchForNationality( String countryCode) throws InterruptedException {
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
-        newadminhomepage.clickToogleMenu();
-        newadminhomepage.mouseHoweMaintenance();
-        newadminhomepage.mouseHoweGeography();
-        newadminhomepage.clickNationality ();
-        newadminhomepage.swithToIframe();
-        newadmingeographypage.clickNationalityLocator(countryCode);
-        newadmingeographypage.clickNationalitySearchButtonLocator();
-        newadmingeographypage.clickNationalityRecordLocator();
-        newadminhomepage.swithToDefault();
-        checkTheNotificationMessage();
-        driver.navigate().refresh();
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            AdminGeographyPageMethods newadmingeographypage = PageFactory.initElements(driver, AdminGeographyPageMethods.class);
+            newadminhomepage.clickToogleMenu();
+            newadminhomepage.mouseHoweMaintenance();
+            newadminhomepage.mouseHoweGeography();
+            newadminhomepage.clickNationality();
+            newadminhomepage.swithToIframe();
+            newadmingeographypage.clickNationalityLocator(countryCode);
+            newadmingeographypage.clickNationalitySearchButtonLocator();
+            newadmingeographypage.clickNationalityRecordLocator();
+            newadminhomepage.swithToDefault();
+            checkTheNotificationMessage();
+        }
+        catch (Exception e) {
+            driver.navigate().refresh();
+        }
     }
 
     @Test (dependsOnMethods = {"logInToThePSSAdmin"}, retryAnalyzer = Authenticator.Retry.class)
     public void logOutFromThePSSAdmin(){
 
-        AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
-        newadminhomepage.gotologgedInUserinfor();
-        newadminhomepage.clickLogoutButton();
+        try {
+            AdminHomePageMethods newadminhomepage = PageFactory.initElements(driver, AdminHomePageMethods.class);
+            newadminhomepage.gotologgedInUserinfor();
+            newadminhomepage.clickLogoutButton();
+        }
+        catch (Exception e) {
+
+        }
 
 
     }
