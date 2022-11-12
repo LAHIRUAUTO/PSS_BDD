@@ -126,7 +126,9 @@ public class Utils extends Browser_Base{
                 SimpleDateFormat dateFormat = new SimpleDateFormat();
                 System.out.println("Notification message is displayed");
                 System.out.println(notificationMessage.getText());
-                getScreenshot(notificationMessage.getText() + " " + dateFormat.format(currentDate));
+                String message = notificationMessage.getText().replace(" ", "_" );
+                String screenCaptureName = message.concat("_" + dateFormat.format(currentDate));
+                getScreenshot(screenCaptureName);
 
             }
 
