@@ -25,6 +25,7 @@ public class PaymentConfirmationPage extends Utils {
 
     public void clickNoInsurance () throws InterruptedException {
         sleeping(1000);
+        explicitWaitElementClickable(noInsurance);
         noInsurance.click();
     }
 

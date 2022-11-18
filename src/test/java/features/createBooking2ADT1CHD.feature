@@ -1,4 +1,6 @@
+
 Feature: IBE booking flow
+  @SmokeTest
   Scenario: Create booking of 2 ADT 1 CHD through IBE with incorrect credit card
     Given I make a booking from origin to destination on 22/02/2023 for 2 adults and 1 child
     |Berlin|Lahiru|Vikasitha|Disna|Kumari|Mihidi|Yeleena|

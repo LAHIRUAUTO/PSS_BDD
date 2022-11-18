@@ -106,6 +106,9 @@ public class stepDefination extends Utils {
         try {
         PaymentConfirmationPage newPaymentConfirmationPage = PageFactory.initElements(driver, PaymentConfirmationPage.class);
         newPaymentConfirmationPage.finalizeTestCase();
+        sleeping(30000);
+        Utils.endSuite("100", "IBE", "dcs.selenium.report@gmail.com", "lmsbruovggrocqxk", "vikasithasouth@gmail.com");
+
         }
         catch (Exception e) {
             e.printStackTrace();
