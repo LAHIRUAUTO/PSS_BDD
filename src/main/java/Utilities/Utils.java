@@ -26,7 +26,7 @@ public class Utils extends Browser_Base{
 
     //Explicit Wait ElementVisible
     public void explicitWaitElementVisible(WebElement element) {
-        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(30));
         explicitwait.until(ExpectedConditions.visibilityOf(element ));
 
     }

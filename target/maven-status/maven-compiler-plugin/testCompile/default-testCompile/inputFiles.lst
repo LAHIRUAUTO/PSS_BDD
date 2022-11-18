@@ -1,1 +1,3 @@
-/home/user/Desktop/RYANAIR/src/test/java/PSSTestRunner/PSSTestRunner.java
+/home/user/Desktop/RYANAIR/src/test/java/stepDefinations/stepDefination.java
+/home/user/Desktop/RYANAIR/src/test/java/TestRunner/TDDTestRunner.java
+/home/user/Desktop/RYANAIR/src/test/java/TestRunner/BDDTestRunner.java

@@ -80,56 +80,44 @@ public class IBEHomePage extends Utils {
     @CacheLookup
     private WebElement doneButtonOnPaxSelection;
 
-    public void clickAcceptCookieButton () {
+    @FindBy(xpath="//button[@aria-label='Search']")
+    @CacheLookup
+    private WebElement searchButton;
 
+    public void clickAcceptCookieButton () {
         try {
             cookieAcceptButton.click();
         }
         catch (Exception e) {
-
         }
-
     }
 
-
-
     public void clickAcceptCookieButton2 () {
-
         try {
             cookieAcceptButton2.click();
         }
         catch (Exception e) {
-
         }
-
     }
-
-
 
     public void clickLoginButton () throws InterruptedException {
         sleeping(2000);
-
         try {
             loginButton.click();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
-
 
     public void clickLoginWithGmail () throws InterruptedException {
         sleeping(5000);
-
         try {
             loginWithGmail.click();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 
@@ -143,32 +131,18 @@ public class IBEHomePage extends Utils {
 
     }
 
-
-
-
-
-
-
     public void selectOWType () throws InterruptedException {
-        sleeping(2000);
+        sleeping(4000);
         explicitWaitElementClickable(tripType);
         tripType.click();
-
     }
-
-
 
     public void enterDestinationAirport (String destinationAirportName) throws InterruptedException {
             sleeping(3000);
             explicitWaitElementClickable(destinationAirport);
             destinationAirport.sendKeys("");
             destinationAirport.sendKeys(destinationAirportName);
-
-
     }
-
-
-
 
     public void selectDestinationAirport () throws InterruptedException {
         if (destinationToolTip.isEnabled()) {
@@ -179,13 +153,11 @@ public class IBEHomePage extends Utils {
     }
 
 
-
     public void selectDepartureMonth () throws InterruptedException {
         sleeping(1000);
         departureMonth.click();
 
     }
-
 
 
     public void selectDepartureDate () throws InterruptedException {
@@ -222,9 +194,7 @@ public class IBEHomePage extends Utils {
 
     }
 
-    @FindBy(xpath="//button[@aria-label='Search']")
-    @CacheLookup
-    private WebElement searchButton;
+
 
     public void clickSearchButton () throws InterruptedException {
         sleeping(1000);
@@ -232,9 +202,6 @@ public class IBEHomePage extends Utils {
         searchButton.click();
 
     }
-
-
-
 
 
 

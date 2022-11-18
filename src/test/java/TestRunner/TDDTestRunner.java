@@ -12,11 +12,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 
-public class TestRunner extends Utils {
+public class TDDTestRunner extends Utils {
 
     @Parameters({"url"})
     @BeforeTest

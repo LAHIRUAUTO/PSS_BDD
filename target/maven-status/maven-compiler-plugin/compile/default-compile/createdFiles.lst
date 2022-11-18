@@ -1,8 +1,13 @@
-PSS_Pages/PSS_Login_Page/AdminLoginPageObjects.class
+Pages/PaymentConfirmationPage.class
 Utilities/Listener.class
-Utilities/Utils.class
 Utilities/TestNGDataProvider.class
-Utilities/ZipUtils.class
+Pages/SeatSelectionPage.class
+Pages/FlightExtrasPage.class
 Utilities/Browser_Base.class
+Pages/IBEHomePage.class
+Pages/BaggageSelectionPage.class
+Pages/FlightAvailabilityResultPage.class
+Utilities/Utils.class
+Utilities/ZipUtils.class
 Utilities/ExtentReporter.class
 Utilities/TestReportSender.class

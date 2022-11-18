@@ -21,7 +21,7 @@
     <test name="Sub_Suite_1">
 
         <classes>
-            <class name="TestRunner.TestRunner">
+            <class name="TestRunner.TDDTestRunner">
                 <methods>
                     <include name="createBooking2ADT1CHD"/>
                 </methods>

@@ -85,6 +85,7 @@ public class Listener extends Utils implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+
         extent.flush();
     }
 
