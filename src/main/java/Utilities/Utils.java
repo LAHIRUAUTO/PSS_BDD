@@ -9,11 +9,9 @@ import org.testng.annotations.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Properties;
 
 
@@ -30,12 +28,14 @@ public class Utils extends Browser_Base{
     public void explicitWaitElementVisible(WebElement element) {
         WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
         explicitwait.until(ExpectedConditions.visibilityOf(element ));
+
     }
 
     //Explicit Wait ElementClickable
     public void explicitWaitElementClickable(WebElement element) {
-        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(20));
         explicitwait.until(ExpectedConditions.elementToBeClickable(element));
+
     }
 
     //Fluent Wait ElementVisible
@@ -47,8 +47,8 @@ public class Utils extends Browser_Base{
                 wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void threadSleep () throws InterruptedException {
-        Thread.sleep(5000);
+    public void sleeping (int miliSeconds) throws InterruptedException {
+        Thread.sleep(miliSeconds);
     }
 
     public void isEnabled (WebElement element) {
@@ -93,16 +93,81 @@ public class Utils extends Browser_Base{
         myRobot.keyRelease(KeyEvent.VK_CONTROL);
         myRobot.keyRelease(KeyEvent.VK_C);
     }
-    public void doubleClickOnCoordinates () throws AWTException {
-
-        Actions newact = new Actions(driver);
-        //newact.moveByOffset();
-    }
 
     public void selectByTextVisible (WebElement stationCodeLocator, String stationCode) {
         Select selectstationCode = new Select(stationCodeLocator);
         selectstationCode.selectByVisibleText(stationCode);
     }
+
+    public void scrollDown ( ) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,500)", "");
+    }
+
+    public void scrollUp ( ) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-250)", "");
+    }
+
+    public void pageEnd( ) throws InterruptedException {
+        sleeping(1500);
+        Actions action = new Actions(driver);
+        action.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+    }
+
+    public void pageUp( ) throws AWTException, InterruptedException {
+        sleeping(2000);
+        Robot rb = new Robot();
+        rb.keyPress(KeyEvent.VK_PAGE_UP);
+        rb.keyRelease(KeyEvent.VK_PAGE_UP);
+
+    }
+
+
+    public void pageScroll(int wheelAmt ) throws AWTException, InterruptedException {
+        sleeping(2000);
+        Robot rb = new Robot();
+        rb.mouseWheel(wheelAmt);
+
+    }
+
+    public void pressTab( ) throws AWTException {
+        Robot rb = new Robot();
+        rb.keyPress(KeyEvent.VK_TAB);
+        rb.keyRelease(KeyEvent.VK_TAB);
+
+    }
+
+    public void pressEnter( ) throws AWTException {
+        Robot rb = new Robot();
+        rb.keyPress(KeyEvent.VK_ENTER);
+        rb.keyRelease(KeyEvent.VK_ENTER);
+
+    }
+
+    public static void sendKeysThroughJS(String keysToSend, WebElement element) {
+
+        JavascriptExecutor ex = (JavascriptExecutor) driver;
+        ex.executeScript("arguments[0].value='"+ keysToSend +"';", element);
+    }
+
+    public void switchToFrameWithIndex(int frameIndex) {
+        driver.switchTo().frame(frameIndex);
+    }
+
+    public void switchToFrameWithName(String frameName) {
+        driver.switchTo().frame(frameName);
+    }
+
+    public void switchToFrameWithWebElement(WebElement element) {
+        driver.switchTo().frame(element);
+    }
+
+    public void switchToDefaultContent() {
+        driver.switchTo().defaultContent();
+    }
+
+
 
 
 
@@ -116,28 +181,7 @@ public class Utils extends Browser_Base{
 
     }
 
-    public void checkTheNotificationMessage () {
 
-        try {
-            WebElement notificationMessage = driver.findElement(By.className("ui-pnotify-text"));
-            // check visibility with isDisplayed()
-            if (notificationMessage.isDisplayed()){
-                Date currentDate = new Date();
-                SimpleDateFormat dateFormat = new SimpleDateFormat();
-                System.out.println("Notification message is displayed");
-                System.out.println(notificationMessage.getText());
-                String message = notificationMessage.getText().replace(" ", "_" );
-                String screenCaptureName = message.concat("_" + dateFormat.format(currentDate));
-                getScreenshot(screenCaptureName);
-
-            }
-
-            } catch (Exception NoSuchElementException) {
-            //System.out.println("No Error Message Displayed");
-            //throw new NoSuchElementException("No Error Message Displayed");
-        }
-
-    }
 
     /*Get Screen shot start*/
     public String getScreenshot (String testCaseName) throws IOException {
@@ -150,82 +194,14 @@ public class Utils extends Browser_Base{
     /*Get Screen shot end*/
 
 
-
-    /*//Capture Screen Shots start
-        @Parameters({ "browser"})
-        @AfterMethod
-
-        public void tearDown(ITestResult result, String browser) throws IOException {
-
-        test.log(LogStatus.INFO, driver + " - Test Case " + result.getName() + " Running");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println("This need to be run per each test methos / case");
-
-        if (ITestResult.FAILURE == result.getStatus()) {
-            test.log(LogStatus.FAIL, driver + " - Test Case " + result.getName() + " Faild");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(System.getProperty("user.dir") + "/Screen_Capture_Result/Failure_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
-
-                System.out.println("Running the Test Case : " + result.getName() + " On " + browser);
-                System.out.println("Test Failed Screenshot taken " + result.getName() + " On " + browser);
-
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-
-
-        } else if (ITestResult.SUCCESS == result.getStatus()) {
-            test.log(LogStatus.PASS, driver + " - Test Case " + result.getName() + " Passed");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(System.getProperty("user.dir") +  "/Screen_Capture_Result/Success_Screen_Capture/" + result.getName() + " On " + browser + ".png"));
-
-                System.out.println("Running the Test Case : " + result.getName()+ " On " + browser);
-                System.out.println("Test Passed Screenshot taken " + result.getName()+ " On " + browser);
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        } else if (ITestResult.SKIP == result.getStatus()) {
-            test.log(LogStatus.SKIP, driver + " - Test Case " + result.getName() + " Passed");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(System.getProperty("user.dir") +  "/Screen_Capture_Result/Skip_Screen_Capture/"+ result.getName() + " On " + browser + ".png"));
-
-                System.out.println("Running the Test Case : " + result.getName()+ " On " + browser);
-                System.out.println("Test Skiped Screenshot taken " + result.getName()+ " On " + browser);
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        }
-    }
-    //Capture Screen Shots ends*/
-
-
-    @Parameters ({"build", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
+    @Parameters ({"buildNumber", "Module", "TestReportSenderMailAddress", "TestReportSenderMailPassword", "TestReportReceiverMailAddress"})
     @AfterSuite
-    public static void endSuite(String build, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
+    public static void endSuite(String buildNumber, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now));
         ZipUtils.creatZipFile();
-        TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ build, "Dear Mr Vikasitha,");
+        TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ buildNumber, "Dear Mr Vikasitha,");
     }
     //1Slite0614
 

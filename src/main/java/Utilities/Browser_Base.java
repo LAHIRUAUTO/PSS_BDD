@@ -24,45 +24,21 @@ public class Browser_Base {
     @BeforeTest
     public static void Intialize(String browser, String url) throws Exception {
 
-        switch (browser) {
-            case "chrome" :
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                //System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/Drivers/chromedriver_linux64/chromedriver"));
-                //create chrome instance
-                //driver = new ChromeDriver();
-                break;
-            case "firefox" :
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-            case "edge" :
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-            case "chromeheadless" :
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions option = new ChromeOptions();
-                option.setHeadless(true);
+                String chromeProfilePath = "/home/user/.config/google-chrome/Default";
+                option.addArguments("chrome.switches", "--disable-extensions");
+                option.addArguments("user-data-dir=" + chromeProfilePath);
+                option.addArguments("--start-maximized");
                 driver = new ChromeDriver(option);
-
-            default:
-                throw new Exception("Browser is not correct");
-
-
-
-        }
-        driver.get(url);
-        driver.manage().window().maximize();
-        //driver.manage().window().setSize(new Dimension (1024, 768));
-        //driver.manage().window().setPosition(new Point(100, 300));
-
+                driver.get(url);
+                driver.manage().window().maximize();
 
     }
 
     @AfterTest
     public static void close() {
-
-        //driver.close();
+        driver.manage().deleteAllCookies();
+        driver.close();
     }
 }
