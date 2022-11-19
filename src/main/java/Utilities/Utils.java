@@ -1,5 +1,6 @@
 package Utilities;
 
+import Base.Browser_Base;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 
-public class Utils extends Browser_Base{
+public class Utils extends Browser_Base {
 
     //Implicit Wait start
     @BeforeMethod
