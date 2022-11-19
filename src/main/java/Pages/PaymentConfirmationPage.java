@@ -24,15 +24,29 @@ public class PaymentConfirmationPage extends Utils {
     private WebElement noInsurance;
 
     public void clickNoInsurance () throws InterruptedException {
-        sleeping(1000);
-        explicitWaitElementClickable(noInsurance);
-        noInsurance.click();
+
+
+        try {
+            sleeping(1000);
+            explicitWaitElementClickable(noInsurance);
+            noInsurance.click();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            clickNoInsurance();
+        }
     }
 
 
     public void enterMobileNumber(String mobileNumber) throws InterruptedException, AWTException {
-        sleeping(2000);
-        sendKeysThroughJS( mobileNumber, this.mobileNumber);
+
+        try {
+            sleeping(2000);
+            sendKeysThroughJS( mobileNumber, this.mobileNumber);
+        } catch (Exception e) {
+            e.printStackTrace();
+            enterMobileNumber(mobileNumber);
+        }
     }
 
     @FindBy(xpath = "//input[@name='cardNumber']")

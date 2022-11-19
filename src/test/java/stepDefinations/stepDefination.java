@@ -3,6 +3,7 @@ package stepDefinations;
 import Pages.*;
 import Utilities.Browser_Base;
 import Utilities.Utils;
+import Utilities.ZipUtilsBDD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +16,7 @@ public class stepDefination extends Utils {
 
     @Given("^I make a booking from origin to destination on 22/02/2023 for 2 adults and 1 child$")
     public void i_make_a_booking_from_origin_to_destination_on_22022023_for_2_adults_and_1_child(DataTable data) throws Throwable {
-        Browser_Base.Intialize("chrome", "https://www.ryanair.com/ie/en");
+
         List<List<String>> dataList =  data.asLists();
 
         try {
@@ -106,8 +107,8 @@ public class stepDefination extends Utils {
         try {
         PaymentConfirmationPage newPaymentConfirmationPage = PageFactory.initElements(driver, PaymentConfirmationPage.class);
         newPaymentConfirmationPage.finalizeTestCase();
-        sleeping(30000);
-        Utils.endSuite("100", "IBE", "dcs.selenium.report@gmail.com", "lmsbruovggrocqxk", "vikasithasouth@gmail.com");
+
+
 
         }
         catch (Exception e) {

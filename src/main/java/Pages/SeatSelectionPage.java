@@ -12,10 +12,15 @@ public class SeatSelectionPage extends Utils {
     private WebElement seatSelectionWarningMessage;
 
     public void acceptSeatSelectionWarningMessage () throws InterruptedException {
-        sleeping(5000);
-        explicitWaitElementVisible(seatSelectionWarningMessage);
-        explicitWaitElementClickable(seatSelectionWarningMessage);
-        seatSelectionWarningMessage.click();
+        try {
+            sleeping(5000);
+            explicitWaitElementVisible(seatSelectionWarningMessage);
+            explicitWaitElementClickable(seatSelectionWarningMessage);
+            seatSelectionWarningMessage.click();
+        }
+        catch (Exception e) {
+            acceptSeatSelectionWarningMessage();
+        }
 
     }
 
@@ -24,15 +29,15 @@ public class SeatSelectionPage extends Utils {
     private WebElement seatMap;
 
     String pax0Seat;
-    @FindBy(xpath = "//button[@id='seat-11A']")
+    @FindBy(xpath = "//button[@id='seat-10A']")
     @CacheLookup
     private WebElement seatForPax0;
 
-    @FindBy(xpath = "//button[@id='seat-11B']")
+    @FindBy(xpath = "//button[@id='seat-10B']")
     @CacheLookup
     private WebElement seatForPax1;
 
-    @FindBy(xpath = "//button[@id='seat-11C']")
+    @FindBy(xpath = "//button[@id='seat-10C']")
     @CacheLookup
     private WebElement seatForPax2;
 
