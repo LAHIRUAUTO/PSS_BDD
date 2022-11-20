@@ -1,3 +1,4 @@
 stepDefinations/stepDefination.class
 TestRunner/TDDTestRunner.class
+stepDefinations/Hooks.class
 TestRunner/BDDTestRunner.class

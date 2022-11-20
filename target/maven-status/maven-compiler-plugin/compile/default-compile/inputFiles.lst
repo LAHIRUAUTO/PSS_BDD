@@ -1,3 +1,4 @@
+/home/user/Desktop/RYANAIR/src/main/java/Utilities/ZipUtilsBDD.java
 /home/user/Desktop/RYANAIR/src/main/java/Pages/PaymentConfirmationPage.java
 /home/user/Desktop/RYANAIR/src/main/java/Pages/BaggageSelectionPage.java
 /home/user/Desktop/RYANAIR/src/main/java/Pages/FlightExtrasPage.java
@@ -9,6 +10,6 @@
 /home/user/Desktop/RYANAIR/src/main/java/Pages/IBEHomePage.java
 /home/user/Desktop/RYANAIR/src/main/java/Utilities/ZipUtils.java
 /home/user/Desktop/RYANAIR/src/main/java/Utilities/TestReportSender.java
-/home/user/Desktop/RYANAIR/src/main/java/Utilities/MainClass.java
+/home/user/Desktop/RYANAIR/src/main/java/Base/Browser_Base.java
 /home/user/Desktop/RYANAIR/src/main/java/Utilities/TestNGDataProvider.java
-/home/user/Desktop/RYANAIR/src/main/java/Utilities/Browser_Base.java
+/home/user/Desktop/RYANAIR/src/main/java/Utilities/TestReportSenderBDD.java
