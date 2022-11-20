@@ -172,13 +172,13 @@ public class Utils extends Browser_Base {
 
 
 
-    public void appPropertyAccess () throws IOException {
+    public String getPropertyValue (String appPropertyKey) throws IOException {
         //Load Property File
         File src = new File(System.getProperty("user.dir") + "/App.properties");
         FileInputStream objfile = new FileInputStream(src);
         Properties obj = new Properties();
         obj.load(objfile);
-        String setProjectPath = obj.getProperty("ProjectPath");
+        return obj.getProperty(appPropertyKey);
 
     }
 

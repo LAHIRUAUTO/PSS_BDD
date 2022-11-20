@@ -17,7 +17,9 @@ public class Hooks extends Utils{
 
     @Before
     public void beforeScenario() throws Exception {
-        Browser_Base.Intialize("chrome", "https://www.ryanair.com/ie/en");
+        String browser = getPropertyValue("browser");
+        String url = getPropertyValue("url");
+        Browser_Base.Intialize(browser, url);
     }
 
     @After
