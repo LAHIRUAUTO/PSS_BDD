@@ -30,7 +30,7 @@ Also the Hooker are maintained in this package and it's responsible for executin
 BDDTestRunner class is responsible for starting the test scenario execution. This class is extended to AbstractTestNGCucumberTests class to get the TestNG support. Also, the @CucumberOptions annotation was utilized here to relate the feature file and step definition file. Also, the plugin related to the extent reporter is specified.
 The tester can manually run the BDDTestRunner class by right click on the class. It will execute the given test scenarios and the report will be emailed to the specified email address in below code location.
 
-Hookers (package)  → Hook (class) → afterScenario (method) → TestReportReceiverMailAddress (parameter)
+stepDefinations (package)  → Hook (class) → afterScenario (method) → TestReportReceiverMailAddress (parameter)
 
 Also, the reports and screen captures will be available in the Extent_Reports directory as well.
 
