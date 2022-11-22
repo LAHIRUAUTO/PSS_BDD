@@ -41,11 +41,6 @@ public class Hooks{
 
     @AfterStep
     public void addScreenshot(Scenario scenario) throws Exception {
-        File screenshot = ((TakesScreenshot) testContextSetup.testBase.webDriverManager()).getScreenshotAs(OutputType.FILE);
-        byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
-        scenario.attach(fileContent, "image/png", "screenshot");
-
-
-
+        testContextSetup.genericUtils.addScreenshot(scenario);
     }
 }

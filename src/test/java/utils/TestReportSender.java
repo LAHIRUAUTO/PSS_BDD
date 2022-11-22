@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
-public class TestReportSenderBDD {
+public class TestReportSender {
 
     static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
 

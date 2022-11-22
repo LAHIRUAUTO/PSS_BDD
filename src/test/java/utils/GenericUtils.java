@@ -1,6 +1,7 @@
 package utils;
 
 
+import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -49,6 +50,7 @@ public class GenericUtils {
     public void explicitWaitElementClickable(WebElement element) {
         WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
         explicitwait.until(ExpectedConditions.elementToBeClickable(element));
+
     }
 
     //Fluent Wait ElementVisible
@@ -202,6 +204,15 @@ public class GenericUtils {
         FileUtils.copyFile(source, file);
         return System.getProperty("user.dir")+"/Screen_Capture_Result/"+testCaseName+".png";
     }
+
+    public void addScreenshot(Scenario scenario) throws Exception {
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
+        scenario.attach(fileContent, "image/png", "screenshot");
+
+
+
+    }
     /*Get Screen shot end*/
 
 
@@ -216,8 +227,8 @@ public class GenericUtils {
     public static void endSuiteBDD(String buildNumber, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
-        ZipUtilsBDD.creatZipFile();
-        TestReportSenderBDD.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ buildNumber, "Dear Mr Vikasitha,");
+        ZipUtils.creatZipFile();
+        TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ buildNumber, "Dear Mr Vikasitha,");
 
     }
 

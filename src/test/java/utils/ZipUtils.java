@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class ZipUtilsBDD {
+public class ZipUtils {
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
     LocalDateTime now = LocalDateTime.now();
 
@@ -21,12 +21,12 @@ public class ZipUtilsBDD {
     private static final String SOURCE_FOLDER = System.getProperty("user.dir") +"/Extent_Reports"; // SourceFolder path
 
 
-    public ZipUtilsBDD() {
+    public ZipUtils() {
         fileList = new ArrayList < String > ();
     }
 
     public static void creatZipFile() {
-        ZipUtilsBDD appZip = new ZipUtilsBDD();
+        ZipUtils appZip = new ZipUtils();
         appZip.generateFileList(new File(SOURCE_FOLDER));
         appZip.zipIt(OUTPUT_ZIP_FILE);
 

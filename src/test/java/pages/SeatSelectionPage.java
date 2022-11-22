@@ -35,15 +35,15 @@ public class SeatSelectionPage extends GenericUtils {
     private WebElement seatMap;
 
     String pax0Seat;
-    @FindBy(xpath = "//button[@id='seat-12A']")
+    @FindBy(xpath = "//button[@id='seat-10A']")
     @CacheLookup
     private WebElement seatForPax0;
 
-    @FindBy(xpath = "//button[@id='seat-12B']")
+    @FindBy(xpath = "//button[@id='seat-10B']")
     @CacheLookup
     private WebElement seatForPax1;
 
-    @FindBy(xpath = "//button[@id='seat-12C']")
+    @FindBy(xpath = "//button[@id='seat-10C']")
     @CacheLookup
     private WebElement seatForPax2;
 

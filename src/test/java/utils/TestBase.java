@@ -10,8 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestBase {
 
     public WebDriver driver;
-    ConfigFileReader configFileReader;
-
     public TestBase () {
 
     }
