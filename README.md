@@ -4,10 +4,18 @@ Recruitment test for Lahiru Vikasitha (DUB)
 ## Introduction
 
 - BDD : The tester can manually run the BDDTestRunner class by right click on the class.
+<<<<<<< HEAD
 - The changes  has been pushed to origin/master branch in the given git repo.
 - When run the test at first time the program tries to use exsting google chrome user profile in the browser. this should be available.
     - Email - Ryanairlahiru@gmail.com
     - Password - Ryanair@123
+=======
+- TDD : The tester can manually run the TDDTestRunner class by right click on the devtest.xml file.
+- The changes  has been pushed to origin/master branch in the given git repo. 
+- When run the test at first time the program tries to use exsting google chrome user profile in the browser. this should be available. 
+  - Email - Ryanairlahiru@gmail.com
+  - Password - Ryanair@123
+>>>>>>> f32f13c5a19a3697329f7c052acb97a85da8774a
 
 The test scenario was automated on Ryanair IBE (https://www.ryanair.com/ie/en/) using Selenium WebDrive / JAVA / TestNG / Cucumber / Gherkin and Maven.
 
