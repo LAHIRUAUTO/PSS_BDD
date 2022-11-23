@@ -36,9 +36,9 @@ public class Hooks{
     public void afterScenario() throws Exception {
         testContextSetup.testBase.webDriverManager().quit();
         System.out.println("Extent report is emailing.... !!! do not interrupt !!!");
-        testContextSetup.genericUtils.sleeping(30000);
+        testContextSetup.genericUtils.sleeping(10000);
         GenericUtils.endSuiteBDD("100", "IBE", "dcs.selenium.report@gmail.com", "lmsbruovggrocqxk", "vikasithasouth@gmail.com");
-
+        testContextSetup.genericUtils.sleeping(10000);
     }
 
     @AfterStep

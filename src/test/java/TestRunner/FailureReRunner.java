@@ -5,11 +5,10 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = "@failure_cases.txt",
         glue = "stepDefinations",
         plugin = {
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "rerun:failure_cases.txt",
                 "html:reporting/cucumber.html",
                 "json:reporting/cucumber.json"
         },
@@ -17,7 +16,7 @@ import io.cucumber.testng.CucumberOptions;
         tags = ("@SmokeTest")
 
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class FailureReRunner extends AbstractTestNGCucumberTests {
 
 
 }
