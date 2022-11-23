@@ -216,6 +216,7 @@ public class GenericUtils {
     /*Get Screen shot end*/
 
 
+
     public String getPropertyValue (String propertyKey) throws IOException {
         File src = new File(System.getProperty("user.dir") + "/src/test/resources/global.properties");
         FileInputStream objfile = new FileInputStream(src);
