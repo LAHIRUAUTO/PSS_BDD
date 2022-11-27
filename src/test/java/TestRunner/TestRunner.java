@@ -14,6 +14,7 @@ import io.cucumber.testng.CucumberOptions;
                 "json:reporting/cucumber.json"
         },
         monochrome = true,
+        dryRun = false,
         tags = ("@SmokeTest")
 
 )
