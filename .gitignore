@@ -4,4 +4,5 @@ target/
 Extent_Reports.zip
 Console_Output.txt
 failure_cases.txt
+log4j.out
 

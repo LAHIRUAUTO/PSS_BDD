@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.TestContextSetup;
 
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class IBEHomePageSteps {
 

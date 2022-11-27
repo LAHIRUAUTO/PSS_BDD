@@ -6,8 +6,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import stepDefinations.IBEHomePageSteps;
 
 public class TestBase {
+
 
     public WebDriver driver;
     public TestBase () {
@@ -16,6 +20,8 @@ public class TestBase {
 
 
     public WebDriver webDriverManager () throws Exception {
+
+        PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/test/resources/log4j.properties");
 
 
         if (driver == null) {
@@ -29,6 +35,7 @@ public class TestBase {
             driver = new ChromeDriver(option);
             driver.get(FileReaderManager.getInstance().getConfigReader().getUrl());
             driver.manage().window().maximize();
+
         }
         return driver;
     }
