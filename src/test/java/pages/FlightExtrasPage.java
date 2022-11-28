@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -8,6 +9,7 @@ import utils.GenericUtils;
 
 public class FlightExtrasPage extends GenericUtils {
 
+    private static org.apache.log4j.Logger log = Logger.getLogger(FlightExtrasPage.class);
 
     public FlightExtrasPage(WebDriver driver) {
         super(driver);

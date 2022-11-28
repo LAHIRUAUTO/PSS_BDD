@@ -166,65 +166,15 @@ public class GenericUtils {
     }
 
 
-
-
-
-
-
-
-
-    public void checkTheNotificationMessage () {
-
-        try {
-            WebElement notificationMessage = driver.findElement(By.className("ui-pnotify-text"));
-            // check visibility with isDisplayed()
-            if (notificationMessage.isDisplayed()){
-                Date currentDate = new Date();
-                SimpleDateFormat dateFormat = new SimpleDateFormat();
-                System.out.println("Notification message is displayed");
-                System.out.println(notificationMessage.getText());
-                String message = notificationMessage.getText().replace(" ", "_" );
-                String screenCaptureName = message.concat("_" + dateFormat.format(currentDate));
-                getScreenshot(screenCaptureName);
-
-            }
-
-        } catch (Exception NoSuchElementException) {
-            //System.out.println("No Error Message Displayed");
-            //throw new NoSuchElementException("No Error Message Displayed");
-        }
-
-    }
-
     /*Get Screen shot start*/
-    public String getScreenshot (String testCaseName) throws IOException {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir")+"/Screen_Capture_Result/"+testCaseName+".png");
-        FileUtils.copyFile(source, file);
-        return System.getProperty("user.dir")+"/Screen_Capture_Result/"+testCaseName+".png";
-    }
 
     public void addScreenshot(Scenario scenario) throws Exception {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
         scenario.attach(fileContent, "image/png", "screenshot");
-
-
-
     }
     /*Get Screen shot end*/
 
-
-
-    public String getPropertyValue (String propertyKey) throws IOException {
-        File src = new File(System.getProperty("user.dir") + "/src/test/resources/global.properties");
-        FileInputStream objfile = new FileInputStream(src);
-        Properties obj = new Properties();
-        obj.load(objfile);
-        String propertyValue = obj.getProperty(propertyKey);
-        return propertyValue;
-    }
     public static void endSuiteBDD(String buildNumber, String module, String TestReportSenderMailAddress, String TestReportSenderMailPassword, String TestReportReceiverMailAddress) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();

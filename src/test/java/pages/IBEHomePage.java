@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -7,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import utils.GenericUtils;
 
 public class IBEHomePage extends GenericUtils {
+
+    private static org.apache.log4j.Logger log = Logger.getLogger(IBEHomePage.class);
+
 
 
     public IBEHomePage(WebDriver driver) {
@@ -93,6 +97,7 @@ public class IBEHomePage extends GenericUtils {
             cookieAcceptButton.click();
         }
         catch (Exception e) {
+            log.error("An exception! Oops!", e);
         }
     }
 
@@ -101,6 +106,7 @@ public class IBEHomePage extends GenericUtils {
             cookieAcceptButton2.click();
         }
         catch (Exception e) {
+            log.error("An exception! Oops!", e);
         }
     }
 
@@ -111,6 +117,7 @@ public class IBEHomePage extends GenericUtils {
         }
         catch (Exception e) {
             e.printStackTrace();
+            log.error("An exception! Oops!", e);
         }
     }
 
@@ -121,6 +128,7 @@ public class IBEHomePage extends GenericUtils {
         }
         catch (Exception e) {
             e.printStackTrace();
+            log.error("An exception! Oops!", e);
         }
 
     }

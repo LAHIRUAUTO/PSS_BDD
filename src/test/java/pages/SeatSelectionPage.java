@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -8,6 +9,7 @@ import utils.GenericUtils;
 
 public class SeatSelectionPage extends GenericUtils {
 
+    private static org.apache.log4j.Logger log = Logger.getLogger(SeatSelectionPage.class);
 
     public SeatSelectionPage(WebDriver driver) {
         super(driver);
@@ -26,6 +28,7 @@ public class SeatSelectionPage extends GenericUtils {
         }
         catch (Exception e) {
             acceptSeatSelectionWarningMessage();
+            log.error("An exception! Oops!", e);
         }
 
     }
@@ -35,15 +38,15 @@ public class SeatSelectionPage extends GenericUtils {
     private WebElement seatMap;
 
     String pax0Seat;
-    @FindBy(xpath = "//button[@id='seat-12A']")
+    @FindBy(xpath = "//button[@id='seat-14A']")
     @CacheLookup
     private WebElement seatForPax0;
 
-    @FindBy(xpath = "//button[@id='seat-12B']")
+    @FindBy(xpath = "//button[@id='seat-14B']")
     @CacheLookup
     private WebElement seatForPax1;
 
-    @FindBy(xpath = "//button[@id='seat-12C']")
+    @FindBy(xpath = "//button[@id='seat-14C']")
     @CacheLookup
     private WebElement seatForPax2;
 
@@ -78,6 +81,7 @@ public class SeatSelectionPage extends GenericUtils {
         }
         catch (Exception e) {
             e.printStackTrace();
+            log.error("An exception! Oops!", e);
         }
     }
 

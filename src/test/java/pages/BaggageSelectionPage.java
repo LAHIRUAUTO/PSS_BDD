@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import utils.GenericUtils;
 
 public class BaggageSelectionPage extends GenericUtils {
+
+    private static org.apache.log4j.Logger log = Logger.getLogger(BaggageSelectionPage.class);
 
 
     public BaggageSelectionPage(WebDriver driver) {

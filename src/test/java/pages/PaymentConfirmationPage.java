@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,7 @@ import java.util.List;
 
 public class PaymentConfirmationPage extends GenericUtils {
 
+    private static org.apache.log4j.Logger log = Logger.getLogger(PaymentConfirmationPage   .class);
 
     public PaymentConfirmationPage(WebDriver driver) {
         super(driver);
@@ -40,6 +42,7 @@ public class PaymentConfirmationPage extends GenericUtils {
         catch (Exception e) {
             e.printStackTrace();
             clickNoInsurance();
+            log.error("An exception! Oops!", e);
         }
     }
 
@@ -52,6 +55,7 @@ public class PaymentConfirmationPage extends GenericUtils {
         } catch (Exception e) {
             e.printStackTrace();
             enterMobileNumber(mobileNumber);
+            log.error("An exception! Oops!", e);
         }
     }
 
@@ -212,7 +216,9 @@ public class PaymentConfirmationPage extends GenericUtils {
         }
         catch (Exception e) {
             e.printStackTrace();
+            log.error("An exception! Oops!", e);
             throw e;
+
         }
 
     }

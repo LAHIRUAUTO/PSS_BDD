@@ -8,6 +8,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.ProfilesIni;
 import stepDefinations.IBEHomePageSteps;
 
 public class TestBase {
@@ -21,11 +24,8 @@ public class TestBase {
 
     public WebDriver webDriverManager () throws Exception {
 
-        PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/test/resources/log4j.properties");
-
 
         if (driver == null) {
-
             WebDriverManager.chromedriver().setup();
             ChromeOptions option = new ChromeOptions();
             String chromeProfilePath = "/home/user/.config/google-chrome/Default";
@@ -36,7 +36,9 @@ public class TestBase {
             driver.get(FileReaderManager.getInstance().getConfigReader().getUrl());
             driver.manage().window().maximize();
 
-        }
+    }
+
         return driver;
+
     }
 }

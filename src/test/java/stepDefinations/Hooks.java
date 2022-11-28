@@ -13,7 +13,9 @@ import utils.GenericUtils;
 import utils.TestContextSetup;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Hooks{
 
@@ -27,6 +29,11 @@ public class Hooks{
     @Before
     public void beforeScenario() throws Exception {
 
+            FileWriter fwOb = new FileWriter("log4j.out", false);
+            PrintWriter pwOb = new PrintWriter(fwOb, false);
+            pwOb.flush();
+            pwOb.close();
+            fwOb.close();
 
     }
 
