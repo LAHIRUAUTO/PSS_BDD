@@ -45,7 +45,9 @@ public class IBEHomePageSteps {
             ibeHomePage.clickLoginWithGmail();
             ibeHomePage.clickAcceptCookieButton2();
             ibeHomePage.selectOWType();
-            ibeHomePage.enterDestinationAirport(dataList.get(0).get(0));
+            ibeHomePage.enterDestinationAirport(
+                    dataList.get(0).get(0)
+            );
             ibeHomePage.selectDestinationAirport();
             ibeHomePage.selectDepartureMonth();
             ibeHomePage.selectDepartureDate();
@@ -58,7 +60,14 @@ public class IBEHomePageSteps {
             flightAvailabilityResultPage.waitForCheckMark();
             flightAvailabilityResultPage.selectfareCategory();
             flightAvailabilityResultPage.waitForCheckMark();
-            flightAvailabilityResultPage.enterPassengerDetails(dataList.get(0).get(1),dataList.get(0).get(2),dataList.get(0).get(3),dataList.get(0).get(4),dataList.get(0).get(5),dataList.get(0).get(6));
+            flightAvailabilityResultPage.enterPassengerDetails(
+                    dataList.get(0).get(1),
+                    dataList.get(0).get(2),
+                    dataList.get(0).get(3),
+                    dataList.get(0).get(4),
+                    dataList.get(0).get(5),
+                    dataList.get(0).get(6)
+            );
             flightAvailabilityResultPage.clickContinueButtonOnPassengerDetailsPage();
 
 

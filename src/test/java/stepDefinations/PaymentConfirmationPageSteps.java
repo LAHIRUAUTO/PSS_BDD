@@ -5,6 +5,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.PageFactory;
+import utils.FileReaderManager;
 import utils.TestContextSetup;
 
 import java.util.List;
@@ -27,9 +28,22 @@ public class PaymentConfirmationPageSteps {
 
         try {
             paymentConfirmationPage.clickNoInsurance();
-            paymentConfirmationPage.enterMobileNumber(dataList.get(0).get(0));
-            paymentConfirmationPage.enterCardDetails(dataList.get(0).get(1), dataList.get(0).get(2), dataList.get(0).get(3), dataList.get(0).get(4)  );
-            paymentConfirmationPage.enterbillingAddress(dataList.get(0).get(5), dataList.get(0).get(6), dataList.get(0).get(7), dataList.get(0).get(8), dataList.get(0).get(9));
+            paymentConfirmationPage.enterMobileNumber(
+                    dataList.get(0).get(0)
+            );
+            paymentConfirmationPage.enterCardDetails(
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Card_details", "B2"),
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Card_details", "B3"),
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Card_details", "B4"),
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Card_details", "B5")
+            );
+            paymentConfirmationPage.enterbillingAddress(
+                    dataList.get(0).get(1),
+                    dataList.get(0).get(2),
+                    dataList.get(0).get(3),
+                    dataList.get(0).get(4),
+                    dataList.get(0).get(5)
+            );
             paymentConfirmationPage.clickTermsAndConditions();
             paymentConfirmationPage.makeJSCharacterRecognaized();
             paymentConfirmationPage.selectCurrency();
