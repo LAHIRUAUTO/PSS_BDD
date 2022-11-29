@@ -28,13 +28,7 @@ public class Hooks{
 
     @Before
     public void beforeScenario() throws Exception {
-
-            FileWriter fwOb = new FileWriter("log4j.out", false);
-            PrintWriter pwOb = new PrintWriter(fwOb, false);
-            pwOb.flush();
-            pwOb.close();
-            fwOb.close();
-
+            testContextSetup.genericUtils.eraseFileContent("log4j.out");
     }
 
 

@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.*;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -181,6 +179,14 @@ public class GenericUtils {
         ZipUtils.creatZipFile();
         TestReportSender.sendPDFReportByGMail(TestReportSenderMailAddress, TestReportSenderMailPassword, TestReportReceiverMailAddress, "Test Result at " + dtf.format(now)+ " On "+ module +" "+ buildNumber, "Dear Mr Vikasitha,");
 
+    }
+
+    public void eraseFileContent (String fileName) throws IOException {
+        FileWriter fwOb = new FileWriter(fileName, false);
+        PrintWriter pwOb = new PrintWriter(fwOb, false);
+        pwOb.flush();
+        pwOb.close();
+        fwOb.close();
     }
 
 }
