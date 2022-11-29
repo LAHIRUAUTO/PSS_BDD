@@ -3,15 +3,15 @@ Recruitment test for Lahiru Vikasitha (DUB)
 
 ## Introduction
 
-- BDD : The tester can manually run the BDDTestRunner class by right click on the class.
+- BDD : The tester can manually run the TestRunner class by right click on the class.
 - The changes  has been pushed to origin/master branch in the given git repo.
-- When run the test at first time the program tries to use exsting google chrome user profile in the browser. this should be available.
+- When run the test at first time the program tries to use existing google chrome user profile in the browser. this should be available.
   - Email - Ryanairlahiru@gmail.com
   - Password - Ryanair@123
 
 The test scenario was automated on Ryanair IBE (https://www.ryanair.com/ie/en/) using Selenium WebDrive / JAVA / TestNG / Cucumber / Gherkin and Maven.
 
-I have built a hybrid framework that supports BDD approaches. Page object model design pattern was used within the framework.
+I have built the framework that supports BDD approaches. Page object model design pattern was used within the framework.
 
 
 ### BDD Framework
@@ -20,7 +20,7 @@ Cucumber and Gherkin were utilized in this framework to execute the test suite w
 
 #### Features
 
-createBooking2ADT1CHD.feature file is created on the Feature package to include the given scenario. The relevant test was maintained in the pipeline within the scenario.
+createBooking2ADT1CHD.feature file is created on the Feature package to include the given scenario. The relevant test data was maintained in the pipeline within the scenario and also the credit card details related test data were fed from the external Testdata.xls file with the help of jxl library.
 
 #### Step Definition
 
@@ -29,10 +29,10 @@ Also the Hooker are maintained in this package and it's responsible for executin
 
 #### Test Runner
 
-BDDTestRunner class is responsible for starting the test scenario execution. This class is extended to AbstractTestNGCucumberTests class to get the TestNG support. Also, the @CucumberOptions annotation was utilized here to relate the feature file and step definition file. Also, the plugin related to the extent reporter is specified.
+TestRunner class is responsible for starting the test scenario execution. This class is extended to AbstractTestNGCucumberTests class to get the TestNG support. Also, the @CucumberOptions annotation was utilized here to relate the feature file and step definition file. Also, the plugin related to the extent reporter is specified.
 The tester can manually run the TestRunner class by right click on the class. It will execute the given test scenarios and the report will be emailed to the specified email address in below code location.
 
-Alos, There is a FailureReRunner implemented to re run the failure test scenarios if any. FailureReRunner class can be executed manually by right click on the class. 
+Also, There is a FailureReRunner implemented to re run the failure test scenarios if any. FailureReRunner class can be executed manually by right click on the class. 
 
 stepDefinations (package)  → Hook (class) → afterScenario (method) → TestReportReceiverMailAddress (parameter)
 
@@ -44,7 +44,7 @@ Page package is used to maintain all the page objects related to the web pages i
 
 #### Utils
 
-This package is responsible for maintaining all the generic utilities and common functionalities accros the project like, Browser initiations, Flie readers, Constructor injections, Email sevrvice, Zip util and general selenium functions Etc...
+This package is responsible for maintaining all the generic utilities and common functionalities across the project like, Browser initiations, File readers, Constructor injections, Email sevrvice, Zip util and general selenium functions Etc...
 
 #### POM
 
