@@ -35,6 +35,12 @@ public class IBEHomePage extends GenericUtils {
     @CacheLookup
     private WebElement loginWithGmail;
 
+    @FindBy(xpath = "//div[@class='header-modal__title header-modal__title--desktop']")
+    @CacheLookup
+    private WebElement loginWithGmailPopUp;
+
+
+
     @FindBy(xpath = "//ry-auth-popup[@class='auth-popup']")
     @CacheLookup
     private WebElement loginPopUp;
@@ -111,26 +117,47 @@ public class IBEHomePage extends GenericUtils {
     }
 
     public void clickLoginButton () throws InterruptedException {
-        sleeping(2000);
-        try {
-            loginButton.click();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            log.error("An exception! Oops!", e);
+
+
+
+            try {
+
+                explicitWaitElementClickable(loginButton);
+                loginButton.click();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error("An exception! Oops!", e);
+
         }
     }
 
     public void clickLoginWithGmail () throws InterruptedException {
-        sleeping(5000);
-        try {
-            loginWithGmail.click();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            log.error("An exception! Oops!", e);
-        }
 
+
+            try {
+                    explicitWaitElementVisible(loginWithGmailPopUp);
+                    explicitWaitElementClickable(loginWithGmail);
+                    sleeping(2000);
+                    loginWithGmail.click();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error("An exception! Oops!", e);
+            }
+
+
+    }
+
+    public void waitForDisappearLoginWithGmail () throws InterruptedException {
+
+
+            try {
+                explicitWaitElementInvisibilityOf(loginWithGmailPopUp);
+            } catch (Exception e) {
+                e.printStackTrace();
+
+        }
     }
 
 
@@ -145,13 +172,11 @@ public class IBEHomePage extends GenericUtils {
     }
 
     public void selectOWType () throws InterruptedException {
-        sleeping(4000);
         explicitWaitElementClickable(tripType);
         tripType.click();
     }
 
     public void enterDestinationAirport (String destinationAirportName) throws InterruptedException {
-            sleeping(3000);
             explicitWaitElementClickable(destinationAirport);
             destinationAirport.sendKeys("");
             destinationAirport.sendKeys(destinationAirportName);
@@ -159,7 +184,6 @@ public class IBEHomePage extends GenericUtils {
 
     public void selectDestinationAirport () throws InterruptedException {
         if (destinationToolTip.isEnabled()) {
-            sleeping(1000);
             explicitWaitElementVisible(destinationAirportSelect);
             destinationAirportSelect.click();
         }
@@ -167,14 +191,13 @@ public class IBEHomePage extends GenericUtils {
 
 
     public void selectDepartureMonth () throws InterruptedException {
-        sleeping(1000);
+        explicitWaitElementClickable(departureMonth);
         departureMonth.click();
 
     }
 
 
     public void selectDepartureDate () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(departureDate);
         departureDate.click();
 
@@ -183,7 +206,6 @@ public class IBEHomePage extends GenericUtils {
 
 
     public void selectAddNumberOfADT () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(addNumberOfADT);
         addNumberOfADT.click();
 
@@ -192,7 +214,6 @@ public class IBEHomePage extends GenericUtils {
 
 
     public void selectAddNumberOfCHD () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(addNumberOfADT);
         addNumberOfCHD.click();
 
@@ -201,7 +222,6 @@ public class IBEHomePage extends GenericUtils {
 
 
     public void clickDoneButtonOnPaxSelection () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(doneButtonOnPaxSelection);
         doneButtonOnPaxSelection.click();
 
@@ -210,7 +230,6 @@ public class IBEHomePage extends GenericUtils {
 
 
     public void clickSearchButton () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(searchButton);
         searchButton.click();
 

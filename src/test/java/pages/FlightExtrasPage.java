@@ -32,7 +32,6 @@ public class FlightExtrasPage extends GenericUtils {
 
     public void clickContinueButtonFromFlightExtrasPage () throws InterruptedException {
         pageEnd();
-        sleeping(1000);
         explicitWaitElementVisible(continueButtonFromFlightExtrasPage);
         continueButtonFromFlightExtrasPage.click();
     }
@@ -43,7 +42,6 @@ public class FlightExtrasPage extends GenericUtils {
 
     public void clickContinueButtonFromFlightExtrasPage2 () throws InterruptedException {
         pageEnd();
-        sleeping(2000);
         explicitWaitElementVisible(continueButtonFromFlightExtrasPage2);
         continueButtonFromFlightExtrasPage2.click();
     }

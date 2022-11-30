@@ -1,6 +1,7 @@
 package pages;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -22,7 +23,6 @@ public class SeatSelectionPage extends GenericUtils {
 
     public void acceptSeatSelectionWarningMessage () throws InterruptedException {
         try {
-            sleeping(5000);
             explicitWaitElementClickable(seatSelectionWarningMessage);
             seatSelectionWarningMessage.click();
         }
@@ -37,25 +37,13 @@ public class SeatSelectionPage extends GenericUtils {
     @CacheLookup
     private WebElement seatMap;
 
-    String pax0Seat;
-    @FindBy(xpath = "//button[@id='seat-15A']")
-    @CacheLookup
-    private WebElement seatForPax0;
 
-    @FindBy(xpath = "//button[@id='seat-15B']")
-    @CacheLookup
-    private WebElement seatForPax1;
-
-    @FindBy(xpath = "//button[@id='seat-15C']")
-    @CacheLookup
-    private WebElement seatForPax2;
-
-    public void selectSeats () throws InterruptedException {
-        sleeping(1000);
+    public void selectSeats (String pax0seat,String pax1seat,String pax2seat) throws InterruptedException {
         explicitWaitElementVisible(seatMap);
-        seatForPax0.click();
-        seatForPax1.click();
-        seatForPax2.click();
+        driver.findElement(By.xpath("//button[@id='seat-"+pax0seat+"']")).click();
+        driver.findElement(By.xpath("//button[@id='seat-"+pax1seat+"']")).click();
+        driver.findElement(By.xpath("//button[@id='seat-"+pax2seat+"']")).click();
+
 
     }
 
@@ -64,7 +52,6 @@ public class SeatSelectionPage extends GenericUtils {
     private WebElement continueButtonFromSeatSelectionPage;
 
     public void clickContinueButtonFromSeatSelectionPage () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementVisible(continueButtonFromSeatSelectionPage);
         continueButtonFromSeatSelectionPage.click();
     }
@@ -74,14 +61,15 @@ public class SeatSelectionPage extends GenericUtils {
     private WebElement declineFastTrackButton;
 
     public void clickDeclineFastTrackButton () throws InterruptedException {
-        sleeping(1000);
         try {
             explicitWaitElementVisible(declineFastTrackButton);
             declineFastTrackButton.click();
         }
         catch (Exception e) {
+
             e.printStackTrace();
             log.error("An exception! Oops!", e);
+
         }
     }
 

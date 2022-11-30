@@ -22,7 +22,6 @@ public class BaggageSelectionPage extends GenericUtils {
     private WebElement smallCabinBaggageButton;
 
     public void clickSmallCabinBaggageButton () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementVisible(smallCabinBaggageButton);
         smallCabinBaggageButton.click();
     }
@@ -33,7 +32,6 @@ public class BaggageSelectionPage extends GenericUtils {
 
     public void clickContinueButtonFromBaggageSelectionPage () throws InterruptedException {
         pageEnd();
-        sleeping(1000);
         explicitWaitElementVisible(continueButtonFromBaggageSelectionPage);
         continueButtonFromBaggageSelectionPage.click();
     }

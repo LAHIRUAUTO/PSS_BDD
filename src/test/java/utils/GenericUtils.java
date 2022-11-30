@@ -34,8 +34,13 @@ public class GenericUtils {
     }
 
     public void explicitWaitElementVisible (WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(element ));
+    }
+
+    public void explicitWaitFrameVisible (int frameIndex) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameIndex));
     }
 
     public void sleeping (int miliSeconds) throws InterruptedException {
@@ -46,23 +51,34 @@ public class GenericUtils {
 
     //Explicit Wait ElementClickable
     public void explicitWaitElementClickable(WebElement element) {
-        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(30));
         explicitwait.until(ExpectedConditions.elementToBeClickable(element));
 
     }
 
+    public void explicitWaitElementInvisibilityOf(WebElement element) {
+        WebDriverWait explicitwait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        explicitwait.until(ExpectedConditions.invisibilityOf(element));
+
+    }
+
     //Fluent Wait ElementVisible
-    public void fluentWaitElementVisible(WebElement element) {
+    public void fluentWaitElementClickable(WebElement element) {
         Wait<WebDriver> wait= new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofSeconds(10))
                 .ignoring(NoSuchElementException.class);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void threadSleep () throws InterruptedException {
-        Thread.sleep(5000);
+    public void fluentWaitElementInvisibilityOf(WebElement element) {
+        Wait<WebDriver> wait= new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(10))
+                .ignoring(NoSuchElementException.class);
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
+
 
     public void isEnabled (WebElement element) {
         element.isEnabled();
@@ -128,9 +144,10 @@ public class GenericUtils {
     }
 
     public void pageEnd( ) throws InterruptedException {
-        sleeping(1500);
+        sleeping(2000);
         Actions action = new Actions(driver);
         action.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+        sleeping(2000);
     }
 
     public void pageUp( ) throws AWTException, InterruptedException {
@@ -138,6 +155,7 @@ public class GenericUtils {
         Robot rb = new Robot();
         rb.keyPress(KeyEvent.VK_PAGE_UP);
         rb.keyRelease(KeyEvent.VK_PAGE_UP);
+        sleeping(2000);
 
     }
 
@@ -146,20 +164,26 @@ public class GenericUtils {
         sleeping(2000);
         Robot rb = new Robot();
         rb.mouseWheel(wheelAmt);
+        sleeping(2000);
 
     }
 
-    public void pressTab( ) throws AWTException {
+    public void pressTab( ) throws AWTException, InterruptedException {
+        sleeping(2000);
         Robot rb = new Robot();
         rb.keyPress(KeyEvent.VK_TAB);
         rb.keyRelease(KeyEvent.VK_TAB);
+        sleeping(2000);
+
 
     }
 
-    public void pressEnter( ) throws AWTException {
+    public void pressEnter( ) throws AWTException, InterruptedException {
+        sleeping(2000);
         Robot rb = new Robot();
         rb.keyPress(KeyEvent.VK_ENTER);
         rb.keyRelease(KeyEvent.VK_ENTER);
+        sleeping(2000);
 
     }
 

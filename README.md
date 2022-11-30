@@ -3,11 +3,13 @@ Recruitment test for Lahiru Vikasitha (DUB)
 
 ## Introduction
 
-- BDD : The tester can manually run the TestRunner class by right click on the class.
+- The tester can manually run the TestRunner.java class by right click on the class.
 - The changes  has been pushed to origin/master branch in the given git repo.
-- When run the test at first time the program tries to use existing google chrome user profile in the browser. this should be available.
+- When run the test at first time the program tries to use existing google chrome user profile in the browser. below account can be used.
   - Email - Ryanairlahiru@gmail.com
   - Password - Ryanair@123
+- Explicit wait time out is set to 30 seconds. Please be patient on some test steps. 
+- Card details and passenger seats details provided through the Testdata.xls file. In case the selected seat is not available at the moment please update the Testdata.xls file with an available seats. 
 
 The test scenario was automated on Ryanair IBE (https://www.ryanair.com/ie/en/) using Selenium WebDrive / JAVA / TestNG / Cucumber / Gherkin and Maven.
 
@@ -32,7 +34,7 @@ Also the Hooker are maintained in this package and it's responsible for executin
 TestRunner class is responsible for starting the test scenario execution. This class is extended to AbstractTestNGCucumberTests class to get the TestNG support. Also, the @CucumberOptions annotation was utilized here to relate the feature file and step definition file. Also, the plugin related to the extent reporter is specified.
 The tester can manually run the TestRunner class by right click on the class. It will execute the given test scenarios and the report will be emailed to the specified email address in below code location.
 
-Also, There is a FailureReRunner implemented to re run the failure test scenarios if any. FailureReRunner class can be executed manually by right click on the class. 
+Also, There is a FailureReRunner implemented to re run the failure test scenarios if any. FailureReRunner.java class can be executed manually by right click on the class and it will executed only the failed scenario. 
 
 stepDefinations (package)  → Hook (class) → afterScenario (method) → TestReportReceiverMailAddress (parameter)
 
@@ -50,3 +52,6 @@ This package is responsible for maintaining all the generic utilities and common
 
 POM.xml was utilized to maintain all the required dependencies through the maven repository. 
 
+#### Test Data
+
+Testdata.xls file includes credit card details and passenger seat details. these information will be fed to the test script with the help of jxl library. 

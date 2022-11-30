@@ -35,7 +35,6 @@ public class PaymentConfirmationPage extends GenericUtils {
 
 
         try {
-            sleeping(1000);
             explicitWaitElementClickable(noInsurance);
             noInsurance.click();
         }
@@ -50,7 +49,7 @@ public class PaymentConfirmationPage extends GenericUtils {
     public void enterMobileNumber(String mobileNumber) throws InterruptedException, AWTException {
 
         try {
-            sleeping(2000);
+            explicitWaitElementClickable(this.mobileNumber);
             sendKeysThroughJS( mobileNumber, this.mobileNumber);
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,7 +76,7 @@ public class PaymentConfirmationPage extends GenericUtils {
 
     public void enterCardDetails (String creditCardNumber, String creditCardExpiryDate, String creditCardSecurityCode, String creditCardHolderName) throws InterruptedException {
         pageEnd();
-        sleeping(3000);
+        //explicitWaitFrameVisible(0);
         switchToFrameWithIndex(0);
         explicitWaitElementVisible(cardNumber);
         sendKeysThroughJS(creditCardNumber, cardNumber);
@@ -103,26 +102,21 @@ public class PaymentConfirmationPage extends GenericUtils {
     @CacheLookup
     private WebElement country;
 
-    //span[@class='reactive-complete__search-value ng-star-inserted']
 
     @FindBy(xpath = "//input[@name='postcode']")
     @CacheLookup
     private WebElement zipCode;
 
     public void enterbillingAddress (String addressline1, String addressline2, String ciTy, String CounTry, String ziPcode) throws AWTException, InterruptedException {
-        sleeping(1000);
         explicitWaitElementVisible(addressLine1);
         explicitWaitElementVisible(addressLine2);
         explicitWaitElementVisible(city);
         explicitWaitElementVisible(country);
-        sleeping(1000);
         addressLine1.sendKeys("");
         addressLine1.sendKeys(addressline1);
-        sleeping(1000);
         addressLine2.sendKeys(addressline2);
         city.sendKeys(ciTy);
         country.sendKeys(CounTry);
-        sleeping(1000);
         pressTab();
         pressTab();
         pressTab();
@@ -141,7 +135,6 @@ public class PaymentConfirmationPage extends GenericUtils {
     private WebElement clickCurrency;
 
     public void selectCurrency () throws InterruptedException {
-        sleeping(3000);
         explicitWaitElementClickable(currencyDropdown);
         currencyDropdown.click();
         clickCurrency.click();
@@ -152,7 +145,6 @@ public class PaymentConfirmationPage extends GenericUtils {
     private WebElement termsAndConditions;
 
     public void clickTermsAndConditions () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(termsAndConditions);
         termsAndConditions.click();
     }
@@ -169,7 +161,6 @@ public class PaymentConfirmationPage extends GenericUtils {
     private WebElement payNowButton;
 
     public void clickPayNowButton () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(payNowButton);
         payNowButton.click();
     }
@@ -177,25 +168,26 @@ public class PaymentConfirmationPage extends GenericUtils {
     public void makeJSCharacterRecognaized () throws AWTException, InterruptedException {
         pageUp();
         pageUp();
-        sleeping(1000);
+        explicitWaitElementClickable(mobileNumber);
         mobileNumber.click();
         pressEnter();
 
-        sleeping(1000);
+        //explicitWaitFrameVisible(0);
         switchToFrameWithIndex(0);
+        explicitWaitElementClickable(cardNumber);
         cardNumber.click();
         pressEnter();
 
-        sleeping(1000);
         switchToDefaultContent();
+        explicitWaitElementClickable(expiryDate);
         expiryDate.click();
         pressEnter();
 
-        sleeping(1000);
+        explicitWaitElementClickable(securityCode);
         securityCode.click();
         pressEnter();
 
-        sleeping(1000);
+        explicitWaitElementClickable(cardHolderName);
         cardHolderName.click();
         pressEnter();
 
@@ -205,13 +197,33 @@ public class PaymentConfirmationPage extends GenericUtils {
     @CacheLookup
     private WebElement paymentFailureMessage;
 
+    @FindBy(xpath = "//button[@class='tooltip-button']")
+    @CacheLookup
+    private WebElement loggedInUser;
+
+    @FindBy(xpath = "//button[@class='log-out ry-button--anchor-blue log-out--left ry-button--anchor']")
+    @CacheLookup
+    private WebElement logOutButton;
+
+    @FindBy(xpath = "//div[@class='header-modal__title header-modal__title--desktop']")
+    @CacheLookup
+    private WebElement loginWithGmailPopUp;
+
+
+
+
     public void finalizeTestCase () throws InterruptedException {
-        sleeping(2000);
         explicitWaitElementVisible(paymentFailureMessage);
 
         try {
             if (paymentFailureMessage.isDisplayed()) {
                 System.out.println(paymentFailureMessage.getText());
+                explicitWaitElementClickable(loggedInUser);
+                loggedInUser.click();
+                explicitWaitElementClickable(logOutButton);
+                logOutButton.click();
+                explicitWaitElementVisible(loginWithGmailPopUp);
+
             }
         }
         catch (Exception e) {

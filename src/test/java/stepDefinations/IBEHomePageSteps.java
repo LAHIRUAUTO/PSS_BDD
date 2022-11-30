@@ -4,6 +4,7 @@ import pages.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.support.PageFactory;
+import utils.FileReaderManager;
 import utils.TestContextSetup;
 
 import java.util.List;
@@ -44,6 +45,7 @@ public class IBEHomePageSteps {
             ibeHomePage.clickLoginButton();
             ibeHomePage.clickLoginWithGmail();
             ibeHomePage.clickAcceptCookieButton2();
+            ibeHomePage.waitForDisappearLoginWithGmail();
             ibeHomePage.selectOWType();
             ibeHomePage.enterDestinationAirport(
                     dataList.get(0).get(0)
@@ -72,7 +74,11 @@ public class IBEHomePageSteps {
 
 
             seatSelectionPage.acceptSeatSelectionWarningMessage();
-            seatSelectionPage.selectSeats();
+            seatSelectionPage.selectSeats(
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Seat_details", "B2"),
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Seat_details", "B3"),
+                    FileReaderManager.getInstance().getXlsFileReader().getCellData("Seat_details", "B4")
+            );
             seatSelectionPage.clickContinueButtonFromSeatSelectionPage();
             seatSelectionPage.clickDeclineFastTrackButton();
 

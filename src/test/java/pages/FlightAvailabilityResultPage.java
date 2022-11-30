@@ -23,7 +23,6 @@ public class FlightAvailabilityResultPage extends GenericUtils {
     private WebElement selectFlightButton;
 
     public void selectFlight () throws InterruptedException {
-        sleeping(11000);
         explicitWaitElementClickable(selectFlightButton);
         selectFlightButton.click();
     }
@@ -33,7 +32,6 @@ public class FlightAvailabilityResultPage extends GenericUtils {
     private WebElement checkMark;
 
     public void waitForCheckMark () throws InterruptedException {
-        sleeping(3000);
         explicitWaitElementVisible(checkMark);
         checkMark.click();
         checkMark.click();
@@ -45,8 +43,7 @@ public class FlightAvailabilityResultPage extends GenericUtils {
 
     public void selectfareCategory () throws InterruptedException {
         pageEnd();
-        sleeping(3000);
-            explicitWaitElementVisible(fareCategory);
+        explicitWaitElementVisible(fareCategory);
         fareCategory.click();
     }
 
@@ -120,28 +117,37 @@ public class FlightAvailabilityResultPage extends GenericUtils {
 
     public void enterPassengerDetails (String pax0Firstname, String pax0Lastname, String pax1Firstname, String pax1Lastname, String pax2Firstname, String pax2Lastname ) throws InterruptedException, AWTException {
         pageScroll(10);
-        sleeping(1000);
+        explicitWaitElementClickable(pax0TitleButton);
         pax0TitleButton.click();
+        explicitWaitElementClickable(pax0TitleSelection);
         pax0TitleSelection.click();
-        sleeping(1000);
 
 
+        explicitWaitElementClickable(pax0FirstName);
         pax0FirstName.clear();
         pax0FirstName.sendKeys("");
         pax0FirstName.sendKeys(pax0Firstname);
+
+        explicitWaitElementClickable(pax0LastName);
         pax0LastName.sendKeys(pax0Lastname);
 
 
-        sleeping(1000);
+        explicitWaitElementClickable(pax1TitleButton);
         pax1TitleButton.click();
-        sleeping(1000);
+
+        explicitWaitElementClickable(pax1TitleSelection);
         pax1TitleSelection.click();
-        sleeping(1000);
+
+        explicitWaitElementClickable(pax1FirstName);
         pax1FirstName.sendKeys(pax1Firstname);
+
+        explicitWaitElementClickable(pax1LastName);
         pax1LastName.sendKeys(pax1Lastname);
 
-        sleeping(1000);
+        explicitWaitElementClickable(pax2FirstName);
         pax2FirstName.sendKeys(pax2Firstname);
+
+        explicitWaitElementClickable(pax2LastName);
         pax2LastName.sendKeys(pax2Lastname);
 
     }
@@ -151,7 +157,6 @@ public class FlightAvailabilityResultPage extends GenericUtils {
     private WebElement continueButtonOnPassengerDetailsPage;
 
     public void clickContinueButtonOnPassengerDetailsPage () throws InterruptedException {
-        sleeping(1000);
         explicitWaitElementClickable(continueButtonOnPassengerDetailsPage);
         continueButtonOnPassengerDetailsPage.click();
     }
